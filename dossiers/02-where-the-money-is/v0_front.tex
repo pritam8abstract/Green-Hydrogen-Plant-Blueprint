@@ -1,0 +1,62 @@
+% ============================ COVER ==================================
+\thispagestyle{empty}
+\ruledpaper
+\AddToShipoutPictureBG*{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[ink] (current page.south west) rectangle ([yshift=16mm]current page.south east);
+    \node[anchor=west,text=paper,font=\eyebrowfont\fontsize{7}{9}\selectfont] at ([xshift=31mm,yshift=8mm]current page.south west)
+      {NIT WARANGAL \ \textbullet\ \ DEPARTMENT OF MANAGEMENT STUDIES \ \textbullet\ \ PRM PROJECT FILE};
+    \begin{scope}[shift={([xshift=-40mm,yshift=-55mm]current page.north east)}]
+      \foreach \x/\c in {0/sochre,7/sblue,14/sgreen,21/sviolet,28/audit}{\fill[\c] (\x mm-14mm,0) circle (2.2mm);}
+      \draw[rule,line width=0.8pt] (-14mm,0) -- (14mm,0);
+      \node[font=\eyebrowfont\fontsize{5.5}{6}\selectfont,text=brass] at (0,-6mm) {POWER $\cdot$ STACK $\cdot$ PLANT $\cdot$ MOLECULE $\cdot$ MONEY};
+    \end{scope}
+  \end{tikzpicture}}
+\vspace*{30mm}
+\eyebrow{Dossier 2 \ \textbullet\ \ venture map \ \textbullet\ \ written October 2026}\par\vspace{8mm}
+{\display\fontsize{40}{44}\selectfont\color{ink} Where the Money Is\par}
+\vspace{6mm}\redrule\par\vspace{6mm}
+{\displaysemi\itshape\fontsize{15}{20}\selectfont\color{ink2}A map of the green hydrogen value chain, India first,\\ to find where a new entrant can build a durable,\\ profitable business by 2035.\par}
+\vspace{22mm}
+\begin{minipage}[t]{0.52\textwidth}
+\eyebrow{Written by}\par\smallskip
+{\large Dhritabrata Swarnakar}\par
+{\small\color{ink2} MBA (Finance major, Analytics minor) \\ National Institute of Technology, Warangal}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\textwidth}
+\eyebrow{Companion to}\par\smallskip
+{\large Dossier 1: \emph{Without the Hype}}\par
+{\small\color{ink2} PRM project with Shalvi Bhatnagar \\ Prof.\ P.\,R.\,C.\ Gopal}
+\end{minipage}
+\vfill
+\begin{minipage}{0.92\textwidth}\small\color{ink2}\itshape
+Every figure is tagged by what kind of number it is:
+\rep\ a company or government actually published it; \estd\ my calculation or a reasoned estimate; \prj\ a target or forecast that has not happened yet. Claims that matter also carry a confidence tag (\confH, \confM, \confL).
+\end{minipage}
+\vspace{10mm}
+\newpage
+
+% ============================ THE ANSWER FIRST ==================================
+\phase{The answer first}{The money is not where the hype is}{What I found, in one page, before the evidence.}
+
+I went looking for the best business in green hydrogen and found something uncomfortable. \textbf{The layers everyone talks about, electrolysers and giant export plants, are where money is being lost.} The layers nobody talks about are where it is being made.
+
+\begin{itemize}
+\item \textbf{Owning contracted power and molecules pays.} A renewable power producer like ACME Solar runs at a 90.5\% EBITDA margin \cite{acmefy25} \rep. Industrial-gas companies that sell hydrogen as a service earn about 30\% operating margins \cite{linde2026} \rep. Both sell long contracts.
+\item \textbf{Making the machines does not pay, yet.} thyssenkrupp nucera, a major electrolyser maker, made about €2 million of operating profit on €845 million of sales \cite{nucera2025} \rep. Enapter lost €18.1 million of EBITDA on €22.1 million of revenue, partly from returned stacks \cite{enapter2026} \rep. Plug Power hit its first positive gross margin in years only in late 2025, after a going-concern warning and a 135\% rise in share count \cite{plug2026,plugfool2026} \rep.
+\item \textbf{The building in between barely pays.} India's largest solar EPC contractor earned about a 4.6\% EBITDA margin in FY25 \cite{sw2025} \estd.
+\end{itemize}
+
+Economists call this shape a \emph{smile curve}: profits pool at the two ends of the chain (owning the energy, owning the customer) and drain out of the middle (making and building). For a new entrant with little capital, that points away from factories and mega-plants and towards \textbf{services and contracts that sit close to the customer}: hydrogen-as-a-service for mid-sized factories, independent servicing of electrolyser stacks, and green-certification data. Section~\ref{sec:entry} ranks the five best entry points.
+
+\vspace{4pt}
+\begin{tikzpicture}
+\node[anchor=west,font=\display\fontsize{14}{18}\selectfont,text=ink,text width=0.9\textwidth] at (0,0)
+{\itshape ``In a gold rush, the people who got rich sold shovels. In green hydrogen, even the shovel-makers are losing money. The people who will get rich will be the ones who keep the mines running.''};
+\draw[audit,line width=1.2pt] (-3mm,7mm) -- (-3mm,-7mm);
+\end{tikzpicture}
+
+\begin{plainwords}[How this connects to Dossier 1]
+Dossier 1 asked which machine our plant should use. This one asks a bigger question: \emph{if we were building a company, not a plant, where in the chain should it stand?} The two answers fit together. The plant is the project for Prof.\ Gopal; the business that services, certifies and supplies plants like it is the long-term venture.
+\end{plainwords}
+\newpage

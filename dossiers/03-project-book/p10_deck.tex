@@ -1,0 +1,54 @@
+% ============================ DECK ==================================
+\phase{Phase ten \textbullet\ The presentation}{The storyline for Prof.\ Gopal's class}{Fourteen slides, one message each, split between two speakers, and the questions we expect.}\label{sec:deck}
+
+A good deck is an argument, not a table of contents. Read only the headlines below in order and you should hear the whole case. Each slide has one chart from this book and one sentence the audience should remember.
+
+\begin{center}\tablefont
+\begin{xltabular}{\textwidth}{@{}c P{50mm} L c@{}}
+\toprule
+\thead{\#} & \thead{Headline (the slide title)} & \thead{Evidence on the slide} & \thead{Who}\\ \midrule
+\endhead
+1 & Green hydrogen is a finance problem wearing an engineering costume & Title; the four numbers (₹522, ₹397, ₹389, 57\%) & DS\\
+2 & India already uses 6 Mt of hydrogen; almost all of it is grey & Dossier 1: where hydrogen hides; 55--70 Mt of \coo{} & SB\\
+3 & We chose a hybrid: alkaline for cost, PEM for flexibility, AEM as an option & LCOH table by stack & SB\\
+4 & Sell hydrogen to a refinery, not ammonia to an auction & ₹279--397/kg refinery contracts vs.\ ₹53/kg ammonia bids & DS\\
+5 & Paradip wins because the buyer is next door, by a whisker & AHP chart; 30.8\% flip point & SB\\
+6 & The plan says 44 months; the odds say 48 & Gantt; merge-bias S-curve & SB\\
+7 & The schedule is a finance problem: a 46\% chance of beating the waiver deadline & Early release lifts it to 82\% & DS\\
+8 & Operations: oversize the renewables, hold a 7-hour buffer, buy certified back-up & Dispatch chart; 5.6\% grid ceiling & SB\\
+9 & As first designed, the plant cannot pay its lender & Base vs.\ target table; DSCR 0.63 & DS\\
+10 & Two levers close most of the gap: the stack price and the power price & Lever ladder & DS\\
+11 & Bankable on paper, fragile in practice & Monte Carlo IRR; 57\% $\rightarrow$ 32\% with an 18-year loan & DS\\
+12 & Risk sits in the money, not the machine & Heat map; bow-tie & SB\\
+13 & Keep the future cheap: phase two and AEM as options & Option values; stage-gates & SB\\
+14 & What we learned, and the paper it became & Auction results; research question & DS\\
+\bottomrule
+\end{xltabular}
+\end{center}
+\noindent {\small DS: Dhritabrata Swarnakar. SB: Shalvi Bhatnagar. Target length 15 minutes, roughly a minute a slide, with slide 11 given two.}
+
+\subsection{Mapping to what the course asks for}
+\begin{center}\tablefont
+\begin{tabularx}{\textwidth}{@{}P{38mm} L@{}}
+\toprule
+\thead{Course theme} & \thead{Where it appears}\\ \midrule
+Feasibility & Technical (Dossier 1), market (demand forecast), financial (Section~\ref{sec:finance}), schedule (Section~\ref{sec:schedule})\\
+Project management & Charter, scope, WBS, CPM, PERT, Monte Carlo schedule, earned value, stage-gates\\
+Operations management & AHP site selection, aggregate planning and buffer inventory (dispatch LP), maintenance policy, Kraljic sourcing, demand forecasting\\
+Risk & Register, heat map, bow-tie, contingency at P80, real options\\
+Cost & LCOH, capital budget, lever ladder, required tariff\\
+Stakeholders & Power--interest grid, engagement table, contract map\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{The questions we expect, and our answers}
+\begin{description}[leftmargin=0pt,itemsep=5pt,font=\color{audit}\bfseries]
+\item[``Why not just go alkaline, if it is cheapest?''] Alkaline is cheapest at steady load; our power is not steady. The PEM slice takes the fast swings and costs about \usd{}0.19/kg extra. It also buys us the AEM option. If alkaline proves it can ramp without extra wear, we would shift the mix.
+\item[``Your schedule is 44 months but you keep quoting 48. Which is it?''] 44 is the plan if every task takes its most likely time. Because several paths merge, the median outcome is 48. We promise the lender P80, month 51, and buy three months back by ordering early.
+\item[``Isn't ₹397/kg a one-off?''] It is one contract, which is why we test ₹279 too, and why we build nothing without a signed buyer. The point of the lever ladder is to show what must be true to live with either price.
+\item[``Where do your probabilities come from?''] From ranges on each input, every one listed in \texttt{params.py} with its source. The ranges are judgements; the method is standard. Change a range and rerun: the code is public.
+\item[``What would make you cancel the project?''] Failing gate G1: no signed take-or-pay, or an EPC price above \usd{}850/kW, or a P80 date after 2030 that we cannot buy back.
+\item[``Is the research paper original?''] To our knowledge, nobody has tested the SECI Mode 2A awards against a probabilistic cost of delivery. The early results show that only best-in-class developers can cover cost, and three awards look thin even for them.
+\end{description}
+\newpage

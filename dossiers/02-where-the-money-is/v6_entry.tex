@@ -1,0 +1,99 @@
+% ============================ 6. ENTRY POINTS ==================================
+\newpage
+\phase{Section six}{Five entry points, ranked}{Where a new entrant can build a durable, profitable business by 2035, judged on how attractive it is and how feasible it is for a capital-light team.}\label{sec:entry}
+
+\subsection{How I scored them}
+
+\textbf{Attractiveness} is the average of three 1–5 scores: margin, growth to 2035 and defensibility. \textbf{Feasibility} is the average of capital fit, capability fit (for a team with finance, analytics and engineering skills) and speed to first revenue. The ranking uses attractiveness $\times$ feasibility, so an idea must be good on both axes to rank high. All scores are my judgement \estd, built on the evidence in Sections 1–5.
+
+\begin{table}[H]\centering\tablefont
+\caption{The ranked entry points.}
+\begin{tabularx}{\textwidth}{@{}c L c c c c c c c c@{}}
+\toprule
+\thead{Rank} & \thead{Entry point} & \thead{Margin} & \thead{Growth} & \thead{Defend} & \thead{Attract.} & \thead{Capital} & \thead{Skills} & \thead{Speed} & \thead{Feasib.}\\ \midrule
+\textbf{1} & Independent stack service, testing and refurbishment & 4 & 4 & 4 & \textbf{4.0} & 4 & 4 & 4 & \textbf{4.0}\\
+\textbf{2} & Certification and hourly MRV platform & 4 & 4 & 2 & \textbf{3.3} & 5 & 5 & 4 & \textbf{4.7}\\
+\textbf{3} & Hydrogen-as-a-service for mid-sized factories & 4 & 4 & 3 & \textbf{3.7} & 2 & 3 & 3 & \textbf{2.7}\\
+\textbf{4} & Electrolyser-ready water and balance-of-plant packages & 3 & 3 & 2 & \textbf{2.7} & 3 & 3 & 4 & \textbf{3.3}\\
+\textbf{5} & Component IP: electrodes, catalysts, iridium recycling & 5 & 3 & 5 & \textbf{4.3} & 2 & 2 & 1 & \textbf{1.7}\\ \midrule
+-- & \emph{Not ranked:} developer / IPP at scale & 4 & 4 & 1 & 3.0 & 1 & 1 & 1 & 1.0\\
+-- & \emph{Not ranked:} stack manufacturing & 1 & 2 & 2 & 1.7 & 1 & 1 & 1 & 1.0\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=2.3cm,y=1.45cm,
+  pt/.style={circle,fill=#1,minimum size=6.5mm,inner sep=0,text=paper,font=\footnotesize\bfseries},
+  lb/.style={font=\scriptsize,text=ink,align=left,anchor=west}]
+\fill[sgreen!10] (3,3) rectangle (5,5); \fill[wash] (1,3) rectangle (3,5); \fill[wash] (3,1) rectangle (5,3); \fill[sred!7] (1,1) rectangle (3,3);
+\draw[-{Stealth[length=2.5mm]},ink2,line width=0.8pt] (1,1) -- (5.25,1) node[right,font=\footnotesize,text=ink2] {feasibility};
+\draw[-{Stealth[length=2.5mm]},ink2,line width=0.8pt] (1,1) -- (1,5.3) node[above,font=\footnotesize,text=ink2] {attractiveness};
+\foreach \v in {1,2,3,4,5}{\node[font=\tiny,text=ink2,below] at (\v,1) {\v}; \node[font=\tiny,text=ink2,left] at (1,\v) {\v};}
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (4,4.85) {START HERE};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (2,4.85) {GREAT, BUT HARD};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (4,1.2) {EASY, BUT THIN};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (2,1.2) {AVOID};
+\node[pt=sgreen] (a) at (4.0,4.0) {1}; \node[lb] at (4.12,4.0) {Stack service};
+\node[pt=sgreen] (b) at (4.67,3.33) {2}; \node[lb,anchor=east] at (4.53,3.33) {MRV platform};
+\node[pt=sblue] (c) at (2.67,3.67) {3}; \node[lb] at (2.8,3.67) {H\textsubscript{2}-as-a-service};
+\node[pt=sblue] (d) at (3.33,2.67) {4}; \node[lb] at (3.46,2.67) {Water and BoP};
+\node[pt=sochre] (e) at (1.67,4.33) {5}; \node[lb] at (1.8,4.33) {Component IP};
+\node[pt=ink2] (f) at (1.0,3.0) {}; \node[lb] at (1.12,3.0) {Developer at scale};
+\node[pt=ink2] (g) at (1.0,1.67) {}; \node[lb] at (1.12,1.67) {Stack manufacturing};
+\end{tikzpicture}
+\caption{Attractiveness against feasibility. The upper-right quadrant is where I would start.}
+\end{figure}
+
+\subsection{The five, with reasoning}
+
+\subsubsection{1. Independent stack service, testing and refurbishment.}
+\emph{The idea:} become the company that keeps electrolysers running regardless of who made them. That means performance testing, degradation analytics, stack refurbishment, spare parts and, eventually, performance guarantees that lenders and insurers accept.
+\emph{Why it is attractive:} every one of the 862,000 t/yr of allocated plants \cite{sqnghm2025} will need servicing for 25 years, and the OEMs are fragile. Cummins has stopped selling electrolysers \cite{argus2026}; Enapter is absorbing returned stacks \cite{enapter2026}; some Indian makers hold only 100 MW a year of incentive capacity \cite{secipli2024}. Lenders will want somebody independent to stand behind a plant if its OEM disappears.
+\emph{Why it is feasible:} it needs workshops and engineers, not gigafactories, and the analytics core (degradation curves, failure prediction) is exactly the Python and machine-learning work we are already planning for GitHub.
+\emph{The risk:} few plants are operating yet (about 8,000 t/yr \cite{chemindigest2026}), so revenue arrives as the fleet is built. Start with testing and analytics while waiting. \confM
+
+\subsubsection{2. Certification and hourly MRV platform.}
+\emph{The idea:} software and verification support that proves, hour by hour, that a plant's hydrogen meets India's 2 kg standard \cite{drishti2023} \emph{and} the EU's RFNBO rules, so one data trail satisfies BEE's accredited verifiers \cite{ghci2025}, European buyers \cite{amgreenuniper2026} and the EU border carbon charge \cite{coolset}.
+\emph{Why it is attractive:} certification is mandatory, recurring and data-heavy, and exporters face two rulebooks at once.
+\emph{Why it is feasible:} the cheapest to start (₹5–50 crore \estd) and the closest fit to a finance-and-analytics team.
+\emph{The risk:} it is the easiest to copy, and large certifiers could build it themselves. Its defensibility comes from bundling it with entry point 1, where the operating data originates. \confM
+
+\subsubsection{3. Hydrogen-as-a-service for mid-sized factories.}
+\emph{The idea:} build, own and operate small on-site plants (about 0.5–5 MW) for steel, glass, food, pharma and electronics users, and sell hydrogen per kilogram on a long contract. Hygenco's plant for Jindal Stainless is the Indian proof \cite{hygenco2024}.
+\emph{Why it is attractive:} the industrial-gas model earns about 30\% operating margins at scale \cite{linde2026}, contracts are long, and customers stay.
+\emph{Why it is less feasible today:} each site needs ₹10–100 crore of project money \estd, and small-ticket green hydrogen finance barely exists (Section 5, gap 7).
+\emph{The path:} enter once entry points 1 and 2 have produced the operating record that makes small plants financeable. \confM
+
+\subsubsection{4. Electrolyser-ready water and balance-of-plant packages.}
+\emph{The idea:} standard, pre-engineered skids for desalination, purification and compression, sized for 5–100 MW electrolysers at coastal hubs \cite{rw2025}.
+\emph{Why it ranks fourth:} real and fast to sell, but margins are thin (8–15\% \estd) and established water and compression firms can enter easily. Better as a partnership than a company. \confM
+
+\subsubsection{5. Component IP: electrodes, catalysts, iridium recycling.}
+\emph{The idea:} own a piece of patented technology that every stack maker needs, as Newtrace is attempting with alkaline electrodes \cite{newtrace2026}, or recover iridium from spent PEM stacks, where 90\%+ recycling is needed if PEM is to scale \cite{h2tech2022}.
+\emph{Why it is attractive:} the highest margins and the strongest defence; patent holders attract most hydrogen venture money \cite{epo2023}.
+\emph{Why it ranks last:} it needs scientists, labs and seven to ten years. It is an option to hold through a university partnership, not a first business. \confM
+
+\subsection{From start-up to scale: the staircase}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=1mm,y=1mm,
+  st/.style={rounded corners=1.5pt,fill=#1,text=paper,align=left,font=\scriptsize,inner sep=4pt,anchor=south west,text width=34mm}]
+\node[st=sviolet,minimum height=14mm] at (0,0) {\textbf{Years 0–2}\\ MRV software and stack analytics. Revenue from certification support and data.};
+\node[st=sgreen,minimum height=14mm] at (38,12) {\textbf{Years 2–5}\\ Testing lab, field service, refurbishment. First 0.5–5 MW hydrogen-as-a-service sites.};
+\node[st=sblue,minimum height=14mm] at (76,24) {\textbf{Years 5–10}\\ A portfolio of on-site plants; small-ticket finance packaged with insurers.};
+\node[st=ink,minimum height=14mm] at (114,36) {\textbf{By 2035}\\ A hydrogen utility for Indian industry: supply, service and certification in one contract.};
+\draw[-{Stealth[length=3mm]},line width=1pt,audit] (2,-4) -- (150,-4) node[midway,below,font=\footnotesize\itshape,text=ink2] {capital at risk grows only after each step proves itself};
+\end{tikzpicture}
+\caption{The staircase from a capital-light start to a durable business. This is my plan, so every step is \prj.}
+\end{figure}
+
+\begin{verdict}[If I had to start on Monday]
+I would combine entry points 1 and 2 into one company: \textbf{the independent operator's toolkit for Indian electrolysers}, covering testing, degradation analytics, service and green certification. It needs the least capital, uses our strongest skills, sits in the high-margin, low-capital corner of the smile curve, and it grows with every plant anyone builds, whoever wins the auctions and whichever stack they choose. Hydrogen-as-a-service comes next, once our data has made small plants bankable. I would stay out of stack manufacturing and developer-scale plants until we had earned the balance sheet to survive their risks. \confM
+\end{verdict}
+
+\begin{plainwords}[What would change my mind]
+Three signposts would move this ranking. First, if purchase mandates for refineries and fertiliser plants are notified \cite{xynteo2026}, demand certainty jumps and developer economics improve. Second, if OEMs start bundling 20-year full-service guarantees as standard, the independent service gap narrows. Third, if AEM stacks show 20,000+ hours of clean field data, component IP in AEM becomes much more attractive.
+\end{plainwords}

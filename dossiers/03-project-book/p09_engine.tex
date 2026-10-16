@@ -1,0 +1,68 @@
+% ============================ ENGINE ==================================
+\phase{Phase nine \textbullet\ The engine}{The GitHub repository: every number, rerunnable}{What is in \texttt{gh2-india}, how to run it, and which data still has to come in from outside.}\label{sec:engine}
+
+A model nobody else can run is an opinion. Every figure and table in this book is produced by one command, from code anyone can read. The repository is called \texttt{gh2-india} and lives at \url{https://github.com/pritam8abstract/gh2-india} once pushed.
+
+\begin{center}
+\begin{minipage}{0.92\textwidth}
+\ttfamily\fontsize{8}{10.5}\selectfont\color{ink}
+gh2-india/\\
+\hspace*{1em}README.md \hfill\textrm{\itshape\color{ink2} what each module answers, how to run it}\\
+\hspace*{1em}src/gh2/\\
+\hspace*{2em}params.py \hfill\textrm{\itshape\color{ink2} every assumption, tagged REPORTED / ESTIMATED / PROJECTED}\\
+\hspace*{2em}lcoh.py \hfill\textrm{\itshape\color{ink2} levelised cost, five stacks, 100,000 draws}\\
+\hspace*{2em}siteselect.py \hfill\textrm{\itshape\color{ink2} AHP, consistency ratio, weight-flip test}\\
+\hspace*{2em}schedule.py \hfill\textrm{\itshape\color{ink2} CPM, Beta-PERT Monte Carlo, criticality, early release}\\
+\hspace*{2em}resource.py, dispatch.py \hfill\textrm{\itshape\color{ink2} hourly profiles; dispatch LP (HiGHS)}\\
+\hspace*{2em}demand.py \hfill\textrm{\itshape\color{ink2} Bass diffusion demand forecast}\\
+\hspace*{2em}finance.py \hfill\textrm{\itshape\color{ink2} SPV waterfall, DSCR/LLCR/IRR, MMRA, lever ladder}\\
+\hspace*{2em}realoptions.py \hfill\textrm{\itshape\color{ink2} LSMC expansion option; AEM switch}\\
+\hspace*{2em}auctions.py \hfill\textrm{\itshape\color{ink2} the research paper's three tests}\\
+\hspace*{2em}prices.py \hfill\textrm{\itshape\color{ink2} Schwartz one-factor price model}\\
+\hspace*{2em}charts.py \hfill\textrm{\itshape\color{ink2} house-style figures}\\
+\hspace*{1em}scripts/run\_all.py \hfill\textrm{\itshape\color{ink2} one command: results/ and figures/}\\
+\hspace*{1em}data/raw/seci\_mode2a\_tranche1\_bids.csv \hfill\textrm{\itshape\color{ink2} all 65 bids}\\
+\hspace*{1em}tests/ \hfill\textrm{\itshape\color{ink2} 8 sanity tests}\\
+\hspace*{1em}dossiers/ \hfill\textrm{\itshape\color{ink2} LaTeX source of Dossiers 1, 2 and 3}
+\end{minipage}
+\end{center}
+
+\subsection{How to run it}
+On our Windows laptops, in PowerShell:
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+\ttfamily\fontsize{8.4}{11}\selectfont\color{ink}
+git clone https://github.com/pritam8abstract/gh2-india.git\\
+cd gh2-india\\
+python -m venv .venv; .\textbackslash .venv\textbackslash Scripts\textbackslash Activate.ps1\\
+pip install -r requirements.txt\\
+python scripts/run\_all.py \hfill\textrm{\itshape\color{ink2} about 15 seconds}\\
+pytest -q
+\end{minipage}
+\end{center}
+The random seed is fixed (20261013), so every run gives the same numbers. To change an assumption, edit \texttt{params.py} and rerun; the figures in \texttt{figures/} and the numbers in \texttt{results/results.json} update together.
+
+\subsection{The data plan}
+Our build environment could not reach most public data sites, so some feeds are written as functions to run on our own machines. The table is honest about which numbers are real data and which are stand-ins.
+
+\begin{center}\tablefont
+\begin{tabularx}{\textwidth}{@{}P{38mm} P{22mm} L@{}}
+\toprule
+\thead{Data} & \thead{Status} & \thead{Used for}\\ \midrule
+SECI Mode 2A bids, 65 rows \cite{seci2025} & In the repo & Research paper, all three tests\\
+PVGIS hourly solar \cite{pvgis} & Function ready & Replaces synthetic solar in the dispatch LP\\
+NASA POWER hourly wind \cite{nasapower} & Function ready & Replaces synthetic wind\\
+CEA grid emission factor \cite{cea2026} & Number in text & Green-certification limit on grid power\\
+World Bank Pink Sheet (urea, gas) & To pull & Fitting the price model\\
+India ammonia import values (HS 2814) & To pull & Grey-ammonia benchmark\\
+PPAC refinery throughput, monthly & To pull & Refinery hydrogen demand base; seasonal forecast\\
+IEX day-ahead prices & To pull & Firm-power scenarios\\
+RBI / FBIL rates and INR--USD & To pull & Debt cost and FX ranges\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{plainwords}[Why this matters for the presentation]
+When Prof.\ Gopal asks ``where does this number come from?'', the answer is never ``we assumed it''. It is ``\texttt{params.py}, line so-and-so, sourced from this tender result, and here is what happens if it is wrong''. That is the difference between a project report and a project book.
+\end{plainwords}
+\newpage

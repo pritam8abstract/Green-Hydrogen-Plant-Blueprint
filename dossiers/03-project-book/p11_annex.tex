@@ -1,0 +1,67 @@
+% ============================ ANNEXES ==================================
+\phase{Annexes}{The findings, the inputs and the words}{Annex A collects every key finding with its confidence; Annex B lists the main model inputs; Annex C explains the finance terms in plain words.}
+
+\subsection*{Annex A \textbullet\ Key findings and how sure we are}
+\begin{center}\tablefont
+\begin{xltabular}{\textwidth}{@{}c L c@{}}
+\toprule
+\thead{\#} & \thead{Finding} & \thead{Confidence}\\ \midrule
+\endhead
+1 & The plant should sell hydrogen to a refinery on a long fixed price; ammonia auctions price below most developers' cost. & \confH\\
+2 & Paradip beats Kandla for a hydrogen product, but a 2.5-point change in one weight flips it. & \confM\\
+3 & Merge bias adds about 4 months: P50 48.3 vs.\ a 44-month plan. & \confM\\
+4 & Transformers, not electrolysers, are the most likely long pole (critical 52\% of the time). & \confM\\
+5 & Only a 46\% chance of commissioning before the waiver deadline; 82\% with a three-month early order release. & \confM\\
+6 & Grid power can be at most about 5.6\% of supply without breaking the green standard. & \confH\\
+7 & The base design needs ₹522/kg; it fails at ₹397. & \confH\ (fails), \confM\ (level)\\
+8 & Stack price and power price close ₹120 of the ₹152/kg gap. & \confM\\
+9 & Even the target design breaches a 1.20 cover at least once in 57\% of futures; an 18-year loan cuts that to 32\%. & \confM\\
+10 & The right to expand is worth far more than expanding now; the 2030 cliff is worth about ₹100 crore of preparation. & \confL\ (level), \confM\ (logic)\\
+11 & Keep the bay AEM-ready; let field durability, not price, trigger the switch. & \confM\\
+12 & The 2025 ammonia auctions are coverable only by best-in-class developers; three awards imply returns below 12\%. & \confM\\
+13 & Green hydrogen demand in India is unlikely to approach 5 Mt by 2030. & \confL\ (level), \confM\ (direction)\\
+\bottomrule
+\end{xltabular}
+\end{center}
+
+\subsection*{Annex B \textbullet\ Main model inputs}
+\begin{center}\tablefont
+\begin{xltabular}{\textwidth}{@{}P{46mm} P{34mm} L@{}}
+\toprule
+\thead{Input} & \thead{Low / base / high} & \thead{Source and tag}\\ \midrule
+\endhead
+Electrolyser system, hybrid (\usd{}/kW) & 900 / 1,250 / 1,750 & Dossier 1 market scan \estd; target 850\\
+Energy use, hybrid (kWh/kg) & 50.5 / 53.2 / 57.2 & OEM ranges \estd\\
+Stack life, hybrid (hours) & 55,000 / 72,000 / 88,000 & \estd\\
+Delivered power (\usd{}/MWh) & 32 / 38 / 48 & \cite{sqsolar2025,pvmfdre2026} \rep\ to \estd\\
+Share of hours powered & 55\% / 62\% / 68\% & \estd\\
+Discount rate (LCOH) & 8.5\% / 10\% / 12.5\% & \estd\\
+Debt & 70\%, 9\%, 15 years & \estd\\
+Tax rate & 25.17\% & Indian corporate rate \rep\\
+O\&M & 2.1\% of electrolyser capex, +4\%/yr & \estd\\
+Degradation & 0.6\% per year & \estd\\
+Hydrogen handling (\usd{}m) & 15 / 22 / 32 & \estd; target 18\\
+Construction overrun & lognormal, median +5\%, P80 +16\% & \cite{flyvbjerg2014} for the skew \estd\\
+Refinery price (₹/kg) & 279 and 397 & \cite{rwnrl2026,jmkiocl2025} \rep\\
+SIGHT Mode 2A incentive (₹/kg NH\textsubscript{3}) & 8.82, 7.06, 5.30 & \cite{sq2024} \rep\\
+Exchange rate (₹/\usd{}) & 90 (project), 87 (2025 auctions) & \estd\\
+Grid emission factor & 0.675 kg \coo{}/kWh & \cite{cea2026} \rep\\
+\bottomrule
+\end{xltabular}
+\end{center}
+
+\subsection*{Annex C \textbullet\ Finance words in plain language}
+\begin{description}[leftmargin=0pt,itemsep=3pt,font=\color{ink}\bfseries]
+\item[SPV] A company created only to own this one plant, so its debts cannot reach the sponsors' other assets.
+\item[EBITDA] What the plant earns before paying interest, tax and the wear on its machines.
+\item[CFADS] Cash flow available for debt service: the cash actually left to pay the bank each year.
+\item[DSCR] CFADS divided by that year's interest plus repayment. 1.30 means thirty paise spare per rupee owed.
+\item[LLCR] The same idea over the whole life of the loan, in present-value terms.
+\item[IRR] The yearly return that makes all the money in equal to all the money out. Project IRR counts all the capital; equity IRR counts only the owners' share.
+\item[IDC] Interest during construction: interest that piles up before the plant earns anything, and gets added to the loan.
+\item[MMRA / DSRA] Bank accounts the lenders require: one saves for the stack swap, one holds six months of debt payments.
+\item[P50 / P80] The value that half, or 80\%, of simulated outcomes come in below (or, for schedules, finish within).
+\item[Real option] The right, but not the duty, to do something later, such as expand or switch technology. It has value because we can wait to see how the world turns out.
+\item[Winner's curse] In an auction where everyone guesses the cost, the winner is usually the one who guessed lowest, and so is the one most likely to be wrong.
+\end{description}
+\newpage

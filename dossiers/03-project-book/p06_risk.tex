@@ -1,0 +1,87 @@
+% ============================ RISK ==================================
+\phase{Phase six \textbullet\ What can go wrong}{Risk: priced in rupees, not adjectives}{A register of fourteen risks, each tied to a number in our models, a heat map, one bow-tie in detail, and how much contingency to hold.}\label{sec:risk}
+
+A risk register usually fails in one of two ways: it lists everything with equal weight, or it uses words like ``significant'' that nobody can act on. We tried to avoid both. Each risk below is scored for likelihood (L) and impact (I) on our 1--5 scale from Dossier 1, and wherever possible the impact is linked to a model result. The owner is the party best able to control it, which is often not us.
+
+\begin{center}\tablefont
+\begin{xltabular}{\textwidth}{@{}c P{30mm} c c L P{17mm}@{}}
+\toprule
+\thead{ID} & \thead{Risk} & \thead{L} & \thead{I} & \thead{Evidence and response} & \thead{Owner}\\ \midrule
+\endhead
+R1 & Capital cost above \usd{}850/kW & 4 & 5 & Every \usd{}100/kW adds about ₹22/kg to the price we need (lever ladder). \emph{Mitigate:} competitive tender incl.\ Chinese and Indian PLI suppliers; Class 3 estimate before FID. & Sponsor\\
+R2 & Delivered power above \usd{}32/MWh & 3 & 5 & About ₹5.3/kg per \usd{}1/MWh. \emph{Transfer:} fixed-price PPAs; two sellers. & RE sellers\\
+R3 & Commissioning after 31 Dec 2030 (waiver lost) & 3 & 4 & Only 46\% on time as planned; 82\% with early release of orders. \emph{Mitigate:} limited notice to proceed. & SPV / EPC\\
+R4 & DSCR covenant breach & 3 & 5 & 57\% chance below 1.20 at least once (target design). \emph{Mitigate:} 18-yr sculpted loan, DSRA, indexation. & SPV / lenders\\
+R5 & Faster stack wear on variable power & 3 & 4 & Swap years 14 (alkaline), 11 (PEM) are assumptions. \emph{Transfer:} degradation guarantee; \emph{mitigate:} PEM takes the fast swings. & OEMs\\
+R6 & Buyer does not sign, or signs late & 3 & 5 & Our plant is $\sim$9\% of the likely 2030 green refinery market. \emph{Avoid:} no FID without signed take-or-pay. & Sponsor\\
+R7 & Buyer credit or volume default & 2 & 5 & PSU refinery, but 25 years is long. \emph{Mitigate:} payment security (letter of credit), termination payments. & Refinery\\
+R8 & Transformer and rectifier delay & 4 & 3 & Critical 52\% of the time. \emph{Mitigate:} order before FID; two vendors. & EPC\\
+R9 & Grid (CTU) connection delay & 3 & 3 & 9 months of float today; widest range on the plan. \emph{Mitigate:} apply at month 4, not month 13. & SPV\\
+R10 & Losing ``green'' status & 2 & 5 & Grid power above 5.6\% of supply breaks the 2 kg limit. \emph{Avoid:} certified RTC renewable back-up only; hourly metering. & SPV\\
+R11 & Rupee depreciation during procurement & 3 & 3 & Stacks priced in foreign currency. \emph{Transfer:} forward cover. & Treasury\\
+R12 & Hydrogen safety incident & 1 & 5 & Flammable gas next to a refinery. \emph{Mitigate:} PESO-compliant design, HAZOP, separation distances; insurance. & EPC / operator\\
+R13 & Cluster congestion at Paradip & 3 & 2 & Competing for land, water and transmission with ammonia projects. \emph{Mitigate:} early land lock; shared pipeline corridor. & Sponsor\\
+R14 & Policy change (incentives, obligations) & 2 & 3 & Waiver rules or a consumption obligation could shift. \emph{Accept} and monitor; contracts with change-in-law clauses. & Government\\
+\bottomrule
+\end{xltabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=11mm,y=9mm]
+\foreach \l in {1,...,5}{\foreach \i in {1,...,5}{
+  \pgfmathtruncatemacro{\s}{\l*\i}
+  \ifnum\s>14 \def\cc{audit!32}\else\ifnum\s>8 \def\cc{sochre!28}\else\def\cc{sgreen!18}\fi\fi
+  \fill[\cc] (\i-1,\l-1) rectangle (\i,\l); \draw[paper,line width=1pt] (\i-1,\l-1) rectangle (\i,\l);}}
+\foreach \i in {1,...,5}{\node[font=\scriptsize,text=ink2] at (\i-0.5,-0.3) {\i}; \node[font=\scriptsize,text=ink2] at (-0.3,\i-0.5) {\i};}
+\node[font=\scriptsize,text=ink2] at (2.5,-0.75) {impact};
+\node[font=\scriptsize,text=ink2,rotate=90] at (-0.75,2.5) {likelihood};
+\foreach \id/\x/\y in {R1/4.55/3.45, R2/4.55/2.62, R4/4.25/2.38, R6/4.8/2.38, R3/3.72/2.4, R5/3.3/2.62, R7/4.72/1.4, R8/2.5/3.5, R9/2.3/2.5, R13/1.5/2.5, R10/4.25/1.62, R11/2.75/2.38, R12/4.5/0.5, R14/2.5/1.5}{
+  \node[font=\tiny\bfseries,text=ink] at (\x,\y) {\id};}
+\end{tikzpicture}
+\caption{Heat map. Red cells (score 15+) need a named owner and a funded response before financial close.}
+\end{figure}
+
+\begin{finding}[Where the risk really sits]
+The top-right of the map is all money: capital cost (R1), power price (R2), covenants (R4) and the buyer (R6). The technical risks people usually lead with (stack wear, safety) matter, but they are \emph{transferable}, through guarantees and insurance. The financial ones mostly are not. That is why this project needs a risk manager more than it needs another engineer. \confM
+\end{finding}
+
+\subsection{One risk, opened up: the covenant breach}
+A bow-tie diagram puts one risk event in the middle, its causes on the left and its consequences on the right, with the barriers that stop each one. We use it for R4, because it is where most of the other risks end up.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  th/.style={rounded corners=2pt,draw=sochre,line width=0.6pt,fill=paper,font=\scriptsize,text width=24mm,align=left,inner sep=3pt},
+  co/.style={rounded corners=2pt,draw=audit,line width=0.6pt,fill=paper,font=\scriptsize,text width=24mm,align=left,inner sep=3pt},
+  ba/.style={fill=ink,text=paper,font=\tiny,text width=14mm,align=center,inner sep=2pt,minimum height=8mm},
+  ev/.style={circle,fill=audit,text=paper,font=\scriptsize\bfseries,align=center,minimum size=22mm,inner sep=1pt},
+  ln/.style={draw=ink2,line width=0.5pt}]
+\node[ev] (e) at (0,0) {DSCR\\falls\\below 1.20};
+\foreach \y/\t/\b in {1.9/{Power price or curtailment higher than contracted}/{fixed-price PPA}, 0.65/{Stacks wear faster; more kWh per kg}/{OEM degradation guarantee}, -0.65/{Capex overrun raises debt}/{fixed-price EPC, P80 contingency}, -1.9/{Late start; waiver lost; interest piles up}/{early order release, delay damages}}{
+  \node[th,anchor=east] (t) at (-5.6,\y) {\t}; \node[ba] (b) at (-3.2,\y) {\b};
+  \draw[ln] (t.east) -- (b.west); \draw[ln] (b.east) -- (e);}
+\foreach \y/\t/\b in {1.9/{Dividends blocked (cash lock-up)}/{DSRA covers the gap}, 0.65/{Lenders demand a cash sweep}/{sculpted repayments}, -0.65/{Default; lenders step in}/{sponsor support for 12 months}, -1.9/{Equity value lost; reputation}/{early refinancing at COD}}{
+  \node[co,anchor=west] (c) at (5.6,\y) {\t}; \node[ba] (b) at (3.2,\y) {\b};
+  \draw[ln] (e) -- (b.west); \draw[ln] (b.east) -- (c.west);}
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=sochre] at (-6.8,2.75) {CAUSES};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=ink] at (-3.2,2.75) {PREVENTION};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=ink] at (3.2,2.75) {RECOVERY};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=audit] at (6.8,2.75) {CONSEQUENCES};
+\end{tikzpicture}
+\caption{Bow-tie for the covenant breach. Dark boxes are barriers; each is a contract or an account we can name.}
+\end{figure}
+
+\subsection{How much contingency to hold}
+Contingency is not padding; it is the gap between the plan and the level of confidence we want. Our simulations give it directly.
+\begin{center}\tablefont
+\begin{tabularx}{\textwidth}{@{}L c c L@{}}
+\toprule
+\thead{Contingency} & \thead{P50} & \thead{P80} & \thead{What we hold}\\ \midrule
+Schedule (months beyond the 44-month plan) & +4.3 & +6.7 & 7 months in contracts; 3 months bought back by early order release.\\
+Cost (construction overrun) & +5\% & +16\% & P80 owner's contingency, about ₹155 crore on the ₹973 crore target design.\\
+Revenue (equity IRR shortfall vs.\ base) & $-$5.0 pts & $-$10.5 pts at P10 & Held as headroom in the price negotiation, not as cash.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+\newpage

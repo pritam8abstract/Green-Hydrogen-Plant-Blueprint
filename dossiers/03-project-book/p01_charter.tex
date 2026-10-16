@@ -1,0 +1,95 @@
+% ============================ CHARTER ==================================
+\phase{Phase one \textbullet\ Initiation}{The charter and the people}{What we are promising to build, what we are not, and who can help or hurt us along the way.}\label{sec:charter}
+
+A project charter is a one-page contract between the team and its sponsor. It is short on purpose: if we cannot say it on one page, we have not decided it yet.
+
+\begin{center}\tablefont
+\begin{tabularx}{\textwidth}{@{}P{30mm} L@{}}
+\toprule
+\thead{Item} & \thead{What we commit to}\\ \midrule
+Project name & \textbf{Paradip Green Hydrogen Phase 1} (working title), held in a special-purpose company (SPV) so that its debts do not touch the sponsors' other businesses.\\
+Purpose & Replace about 9,000--9,700 tonnes a year of grey hydrogen at a coastal refinery with certified green hydrogen, at a price fixed for 25 years.\\
+Product and buyer & Hydrogen gas, piped about 5 km to the refinery's hydro-treaters. Price benchmarked on IOCL's Panipat award, ₹397/kg for 25 years \cite{jmkiocl2025} \rep. The real buyer in our case is a hypothetical refinery at Paradip; IOCL runs one there.\\
+Capacity & 100 MW of electrolysis (80 MW alkaline, 20 MW PEM) fed by about 105 MW of solar and 68 MW of wind under contract, a 7-tonne hydrogen buffer, and firm renewable power as back-up (Section~\ref{sec:ops}) \estd.\\
+Budget & ₹1,389 crore as first designed; ₹973 crore is the design-to-cost target that makes the project bankable (Section~\ref{sec:finance}) \estd.\\
+Schedule & Start January 2027. Most-likely plan 44 months; P50 48 months; P80 51 months (Section~\ref{sec:schedule}) \estd.\\
+Success criteria & (1) Commercial operation by 31 December 2030, the deadline for the 25-year transmission-charge waiver \cite{sq2023ists}; (2) minimum debt-service cover of at least 1.30 in the lender's base case; (3) equity return of at least 14\%; (4) every kilogram certified at or below 2 kg \coo{}e per kg of hydrogen under India's Green Hydrogen Standard \cite{drishti2023}; (5) zero lost-time injuries.\\
+Sponsor and team & Sponsor: a developer with an investment-grade parent. Project manager: the SPV. For this course: Dhritabrata Swarnakar (finance model, risk, research paper) and Shalvi Bhatnagar (schedule, operations, stakeholders, deck), checking each other's work.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Scope: what is in, and what is deliberately out}
+\begin{center}\tablefont
+\begin{tabularx}{\textwidth}{@{}L L@{}}
+\toprule
+\thead{In scope} & \thead{Out of scope, and why}\\ \midrule
+Electrolysers, rectifiers, transformers, water treatment, compression, buffer storage, 5 km pipeline to the refinery fence & The solar and wind farms themselves: we \emph{buy} their power under contract. Owning them would triple the capital and the risk.\\
+Power purchase agreements and the grid connection & Ammonia synthesis: kept as a phase-two option (Section~\ref{sec:options}).\\
+Certification, metering and monitoring for the Green Hydrogen Standard & Mobility refuelling: a skid can be bolted on later, but no buyer is big enough to justify it now.\\
+Operations and maintenance for 25 years, including stack replacements & Electrolyser manufacturing: Dossier 2 showed the margins there are thin or negative \cite{nucera2025,enapter2026}.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Objectives that can be measured}
+Each objective names a number and a date, so that at the end we can say ``hit'' or ``missed'', not ``broadly on track''.
+\begin{itemize}
+\item \textbf{Time.} Financial close by month 18; mechanical completion by month 44; commercial operation no later than December 2030 (month 48).
+\item \textbf{Cost.} Electrolyser system at or below \usd{}850/kW installed; total capital at or below ₹1,000 crore including financing costs during construction.
+\item \textbf{Performance.} Year-one output of at least 9,000 tonnes; electrolyser energy use no worse than 53.2 kWh/kg at the start of life; plant availability of at least 97\%.
+\item \textbf{Finance.} Minimum DSCR of 1.30 or more; loan-life cover of 1.5 or more; equity IRR at or above 14\% in the base case.
+\item \textbf{Green.} Twelve-month rolling emissions at or below 2 kg \coo{}e per kg, verified by an accredited agency \cite{drishti2023}.
+\end{itemize}
+
+\subsection{Assumptions and constraints}
+\begin{itemize}
+\item Exchange rate ₹90 per US dollar for project costs and ₹87 for the 2025 auctions \estd. A weaker rupee raises the cost of imported stacks; we hedge it (Section~\ref{sec:risk}).
+\item Delivered renewable power \usd{}32--48/MWh, from a solar-plus-storage price of ₹2.86/kWh \cite{sqsolar2025} to firm, round-the-clock renewable power at ₹5.25/kWh \cite{pvmfdre2026} \rep.
+\item Debt at 70\% of cost, 9\% interest, 15 years; corporate tax 25.17\% \estd.
+\item \textbf{Constraint:} the refinery needs a steady flow every hour; the sun and wind do not provide one. Everything in Section~\ref{sec:ops} follows from this mismatch.
+\end{itemize}
+
+\subsection{Who matters, and how much}
+A stakeholder is anyone who can change the outcome or is changed by it. We map them on two axes: how much power they have over the project, and how much they care about it. The quadrant tells us how to treat them.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=1mm,y=1mm,
+  dot/.style={circle,fill=#1,inner sep=1.7pt},
+  lab/.style={font=\scriptsize,align=left,text=ink,anchor=west}]
+\fill[wash] (0,0) rectangle (60,40); \fill[audit!7] (60,40) rectangle (120,80); \fill[wash] (60,0) rectangle (120,40); \fill[faint] (0,40) rectangle (60,80);
+\draw[rule,line width=0.6pt] (60,0)--(60,80) (0,40)--(120,40);
+\draw[ink2,-{Stealth[length=2mm]}] (0,0)--(124,0) node[below left,font=\scriptsize,text=ink2] {how much they care};
+\draw[ink2,-{Stealth[length=2mm]}] (0,0)--(0,84) node[above right,font=\scriptsize,text=ink2] {power over us};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass,anchor=north west] at (1,79) {KEEP SATISFIED};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=audit,anchor=north west] at (61,79) {MANAGE CLOSELY};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass,anchor=north west] at (1,39) {MONITOR};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass,anchor=north west] at (61,39) {KEEP INFORMED};
+\foreach \x/\y/\t/\c in {104/74/Lenders/audit, 98/66/Refinery (buyer)/audit, 84/70/MNRE and SECI/audit, 72/60/Electrolyser OEMs/sblue, 88/54/RE power sellers/sblue, 36/72/CTU and state grid/sochre, 26/62/PESO and pollution board/sochre, 46/52/Odisha government/sochre, 94/30/Local community/sgreen, 76/22/Port of Paradip/sgreen, 68/12/Workers and unions/sgreen, 22/24/Grey-hydrogen suppliers/sviolet, 10/12/Media and NGOs/sviolet}{
+  \node[dot=\c] at (\x,\y) {}; \node[lab] at (\x+1.5,\y) {\t};}
+\end{tikzpicture}
+\caption{Power--interest grid. Colour shows the type of stakeholder (red: money and policy; blue: technology and power supply; ochre: permits; green: place and people; violet: outsiders).}
+\end{figure}
+
+\begin{center}\tablefont
+\begin{xltabular}{\textwidth}{@{}P{24mm} L L P{20mm}@{}}
+\toprule
+\thead{Stakeholder} & \thead{What they want} & \thead{What they can do to us} & \thead{How we engage}\\ \midrule
+\endhead
+Lenders & DSCR $\geq$ 1.30, completion guarantees, proven technology, a creditworthy buyer & Refuse to lend, or lend only on harsh terms; trigger a cash lock-up if cover falls & Lender's engineer from day one; open model; monthly reports\\
+Refinery (buyer) & Reliable flow, purity, a price below its carbon-adjusted grey cost, compliance with any green-hydrogen obligation & Walk away before signing; impose penalties for shortfall & Long-term contract with take-or-pay; joint operating committee\\
+MNRE and SECI & Mission targets met; projects that actually get built & Change incentive or waiver rules; delay certification & Early registration; data sharing on cost\\
+Electrolyser OEMs & Orders, references, the right to blame the power supply for any wear & Late delivery; warranties that exclude the real failure modes & Performance guarantees on kWh/kg and degradation; liquidated damages\\
+RE power sellers & A creditworthy buyer for 25 years & Curtail; fail to build on time & PPAs with delivery guarantees; two sellers, not one\\
+CTU and state grid & Grid safety; transmission paid for & Delay the connection, the longest task on our plan & Apply early; pay for studies before financial close\\
+PESO and pollution board & Safe storage of a flammable gas; water and effluent compliance & Withhold licences & Design to code from FEED; pre-application meetings\\
+Local community & Jobs, water, safety & Protest; slow land access & Water from treated effluent, not the river; local hiring targets\\
+\bottomrule
+\end{xltabular}
+\end{center}
+
+\begin{finding}[What the stakeholder map tells us]
+The four stakeholders in the top-right box (lenders, the buyer, the ministry and SECI) all care about one thing more than any other: \textbf{that the project is bankable}. That means the finance section is not a side-show to project management; it \emph{is} stakeholder management for the people with the most power. The permit-givers in the top-left box care little but can stop everything, so they get early, boring, thorough paperwork. \confM
+\end{finding}
+\newpage

@@ -1,0 +1,66 @@
+project,offtaker,location,qty_tpa,bidder,price_inr_per_kg
+I,IFFCO,Kandla,100000,ACME Cleantech Solutions,54.73
+I,IFFCO,Kandla,100000,Welspun New Energy,54.98
+I,IFFCO,Kandla,100000,AM Green Ammonia (India),55.48
+II,IFFCO,Paradeep,100000,ACME Cleantech Solutions,49.75
+II,IFFCO,Paradeep,100000,Avaada Green Fuels,50.00
+II,IFFCO,Paradeep,100000,Welspun New Energy,108.81
+III,Madras Fertilizers,Chennai,4000,Suryam International,50.00
+III,Madras Fertilizers,Chennai,4000,H2e Power Systems,51.25
+III,Madras Fertilizers,Chennai,4000,C Doctor and Company,55.00
+III,Madras Fertilizers,Chennai,4000,ACME Cleantech Solutions,63.00
+III,Madras Fertilizers,Chennai,4000,Onix Renewable,81.90
+III,Madras Fertilizers,Chennai,4000,NTPC Renewable Energy,101.50
+III,Madras Fertilizers,Chennai,4000,Jakson Green (consortium),500.00
+IV,GNFC,Bharuch,50000,Onix Renewable,52.50
+IV,GNFC,Bharuch,50000,ACME Cleantech Solutions,52.75
+IV,GNFC,Bharuch,50000,NTPC Renewable Energy,60.25
+IV,GNFC,Bharuch,50000,Waaree Clean Energy Solutions,63.75
+IV,GNFC,Bharuch,50000,Welspun New Energy,80.25
+IV,GNFC,Bharuch,50000,Jakson Green (consortium),500.00
+V,Paradeep Phosphates,Paradeep,75000,ACME Cleantech Solutions,55.75
+V,Paradeep Phosphates,Paradeep,75000,Avaada Green Fuels,56.00
+V,Paradeep Phosphates,Paradeep,75000,SCC Infrastructure (consortium),59.00
+V,Paradeep Phosphates,Paradeep,75000,Jakson Green (consortium),78.00
+V,Paradeep Phosphates,Paradeep,75000,Welspun New Energy,111.06
+VI,Paradeep Phosphates,Zuarinagar,25000,ACME Cleantech Solutions,62.84
+VI,Paradeep Phosphates,Zuarinagar,25000,Waaree Clean Energy Solutions,63.09
+VI,Paradeep Phosphates,Zuarinagar,25000,Welspun New Energy,135.00
+VII,Indorama India,Haldia,20000,ACME Cleantech Solutions,64.74
+VII,Indorama India,Haldia,20000,Avaada Green Fuels,64.99
+VII,Indorama India,Haldia,20000,H2e Power Systems,66.30
+VII,Indorama India,Haldia,20000,Welspun New Energy,132.30
+VIII,Mangalore Chemicals & Fertilizers,Mangalore,15000,SCC Infrastructure (consortium),57.65
+VIII,Mangalore Chemicals & Fertilizers,Mangalore,15000,H2e Power Systems,57.90
+VIII,Mangalore Chemicals & Fertilizers,Mangalore,15000,Jakson Green (consortium),82.00
+VIII,Mangalore Chemicals & Fertilizers,Mangalore,15000,ACME Cleantech Solutions,88.49
+VIII,Mangalore Chemicals & Fertilizers,Mangalore,15000,Waaree Clean Energy Solutions,98.05
+VIII,Mangalore Chemicals & Fertilizers,Mangalore,15000,Welspun New Energy,122.94
+IX,Coromandel International,Visakhapatnam,50000,ACME Cleantech Solutions,51.89
+IX,Coromandel International,Visakhapatnam,50000,Avaada Green Fuels,52.14
+IX,Coromandel International,Visakhapatnam,50000,NTPC Renewable Energy,54.39
+IX,Coromandel International,Visakhapatnam,50000,Welspun New Energy,113.76
+X,Coromandel International,Kakinada,85000,Jakson Green (consortium),50.75
+X,Coromandel International,Kakinada,85000,ACME Cleantech Solutions,51.00
+X,Coromandel International,Kakinada,85000,Avaada Green Fuels,52.00
+X,Coromandel International,Kakinada,85000,Welspun New Energy,111.06
+XI,Krishna Phoschem,Meghnagar,70000,NTPC Renewable Energy,51.80
+XI,Krishna Phoschem,Meghnagar,70000,SCC Infrastructure (consortium),52.30
+XI,Krishna Phoschem,Meghnagar,70000,Waaree Clean Energy Solutions,64.05
+XI,Krishna Phoschem,Meghnagar,70000,Jakson Green (consortium),65.30
+XI,Krishna Phoschem,Meghnagar,70000,ACME Cleantech Solutions,84.37
+XI,Krishna Phoschem,Meghnagar,70000,Welspun New Energy,115.20
+XII,Madhya Bharat Agro Products-II,Sagar,60000,Oriana Power,52.25
+XII,Madhya Bharat Agro Products-II,Sagar,60000,SCC Infrastructure (consortium),52.50
+XII,Madhya Bharat Agro Products-II,Sagar,60000,ACME Cleantech Solutions,53.50
+XII,Madhya Bharat Agro Products-II,Sagar,60000,NTPC Renewable Energy,58.10
+XII,Madhya Bharat Agro Products-II,Sagar,60000,Onix Renewable,59.10
+XII,Madhya Bharat Agro Products-II,Sagar,60000,Waaree Clean Energy Solutions,59.35
+XII,Madhya Bharat Agro Products-II,Sagar,60000,Jakson Green (consortium),64.45
+XII,Madhya Bharat Agro Products-II,Sagar,60000,Welspun New Energy,121.05
+XIII,Madhya Bharat Agro Products-III,Dhule,70000,SCC Infrastructure (consortium),53.05
+XIII,Madhya Bharat Agro Products-III,Dhule,70000,Waaree Clean Energy Solutions,53.55
+XIII,Madhya Bharat Agro Products-III,Dhule,70000,ACME Cleantech Solutions,54.55
+XIII,Madhya Bharat Agro Products-III,Dhule,70000,NTPC Renewable Energy,57.55
+XIII,Madhya Bharat Agro Products-III,Dhule,70000,Jakson Green (consortium),89.00
+XIII,Madhya Bharat Agro Products-III,Dhule,70000,Welspun New Energy,115.93

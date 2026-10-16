@@ -1,0 +1,111 @@
+% ============================ COVER ==================================
+\thispagestyle{empty}
+\ruledpaper
+\AddToShipoutPictureBG*{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[ink] (current page.south west) rectangle ([yshift=16mm]current page.south east);
+    \node[anchor=west,text=paper,font=\eyebrowfont\fontsize{7}{9}\selectfont] at ([xshift=31mm,yshift=8mm]current page.south west)
+      {NIT WARANGAL \ \textbullet\ \ DEPARTMENT OF MANAGEMENT STUDIES \ \textbullet\ \ PRM PROJECT FILE};
+    \begin{scope}[shift={([xshift=-40mm,yshift=-55mm]current page.north east)}]
+      \foreach \x/\c in {0/sochre,7/sblue,14/sgreen,21/sviolet,28/audit}{\fill[\c] (\x mm-14mm,0) circle (2.2mm);}
+      \draw[rule,line width=0.8pt] (-14mm,0) -- (14mm,0);
+      \node[font=\eyebrowfont\fontsize{5.5}{6}\selectfont,text=brass] at (0,-6mm) {SITE $\cdot$ SCHEDULE $\cdot$ PLANT $\cdot$ MONEY $\cdot$ RISK};
+    \end{scope}
+  \end{tikzpicture}}
+\vspace*{30mm}
+\eyebrow{Dossier 3 \ \textbullet\ \ the project book \ \textbullet\ \ written October 2026}\par\vspace{8mm}
+{\display\fontsize{40}{44}\selectfont\color{ink} The Project Book\par}
+\vspace{6mm}\redrule\par\vspace{6mm}
+{\displaysemi\itshape\fontsize{15}{20}\selectfont\color{ink2}How we would site, schedule, run, fund and de-risk\\ a 100 MW hybrid green hydrogen plant at Paradip,\\ and what the numbers say before anyone pours concrete.\par}
+\vspace{20mm}
+\begin{minipage}[t]{0.52\textwidth}
+\eyebrow{Written by}\par\smallskip
+{\large Dhritabrata Swarnakar}\par
+{\large Shalvi Bhatnagar}\par
+{\small\color{ink2} M.B.A., Department of Management Studies \\ National Institute of Technology, Warangal}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\textwidth}
+\eyebrow{Course}\par\smallskip
+{\large Project Management (PRM)}\par
+{\small\color{ink2} Prof.\ P.\,R.\,C.\ Gopal \\ Builds on Dossier 1, \emph{Without the Hype}, \\ and Dossier 2, \emph{Where the Money Is}}
+\end{minipage}
+\vfill
+\begin{minipage}{0.92\textwidth}\small\color{ink2}\itshape
+Every number in this book comes from one of two places: a published source (bracketed and linked, for example \cite{jmkiocl2025}), or our Python models, which anyone can rerun from the repository described in Section~\ref{sec:engine}. Figures carry a tag for what kind of number they are (\rep, \estd, \prj) and claims that matter carry a confidence tag (\confH, \confM, \confL).
+\end{minipage}
+\vspace{10mm}
+\newpage
+
+% ============================ VISION ==================================
+\phase{Vision}{A plant a banker would fund}{What we decided, why we decided it, and the one sentence this whole book is trying to prove or disprove.}
+
+Dossier 1 asked which machine. Dossier 2 asked where the money is. This book asks the only question a project manager is really paid to answer: \textbf{can this thing be built on time, run reliably and paid for, and what has to be true for all three at once?}
+
+We have made our choice. Our plant is a \textbf{100 MW hybrid}: 80 MW of pressurised alkaline electrolysers as the workhorse, and 20 MW of PEM electrolysers as the fast-moving part that follows the swings of solar and wind. The PEM slot is also our \textbf{option bay}. When its stacks wear out, around year eleven, we can drop in anion-exchange membrane (AEM) stacks instead, if AEM has proven itself by then. We sell hydrogen, not ammonia, to a refinery next door on a 25-year fixed price, because that is the one Indian customer who has already signed contracts of that kind \cite{jmkiocl2025,rwnrl2026}. Ammonia stays as a phase-two option.
+
+Three beliefs carry over from the first two dossiers and become rules for this one.
+
+\begin{enumerate}[leftmargin=1.6em,label={\color{audit}\display\arabic*}]
+\item \textbf{A project is a promise with a price tag and a date.} We judge every choice by what it does to cost, schedule and the probability of keeping both. A single-point plan is a guess wearing a suit; we plan in ranges and report P50 and P80.
+\item \textbf{The lender is our toughest stakeholder.} Seventy per cent of the money is debt. If the cash flow cannot cover the debt by a margin of 1.3 times in a bad year, nothing else in this book matters.
+\item \textbf{Keep the future cheap.} The core of the plant uses proven technology. The new technology (AEM) and the second phase are bought as \emph{options}: small payments today for the right, not the duty, to act later.
+\end{enumerate}
+
+\vspace{4pt}
+\begin{tikzpicture}
+\node[anchor=west,font=\display\fontsize{14.5}{18}\selectfont,text=ink,text width=0.9\textwidth] at (0,0)
+{\itshape ``A green hydrogen plant is an electricity-buying business with a chemistry set attached. Get the power, the debt and the date right, and the chemistry looks after itself.''};
+\draw[audit,line width=1.2pt] (-3mm,7mm) -- (-3mm,-7mm);
+\end{tikzpicture}
+
+\vspace{6pt}
+\begin{plainwords}[Four numbers to keep in your head]
+\textbf{₹522 per kg} is what our plant would need to charge, as first designed, to keep its lender and its owners whole. \textbf{₹397 per kg} is what the best Indian refinery contract actually pays \cite{jmkiocl2025}. \textbf{₹389 per kg} is what the plant needs after five design-to-cost moves, so it squeaks through, with ₹8 of headroom. And \textbf{57\%} is the chance that, even then, the plant breaks its loan covenant at least once in fifteen years. Those four numbers are the story of this book.
+\end{plainwords}
+\newpage
+
+% ============================ WORK FLOW ==================================
+\phase{Work flow}{The map of this book}{From a technology choice to a plan a lender, a professor and a reviewer can each test.}
+
+\begin{center}
+\begin{tikzpicture}[
+  box/.style={rounded corners=2pt,draw=#1,line width=0.7pt,fill=paper,align=left,inner sep=4.5pt,text width=33mm,font=\footnotesize},
+  arr/.style={-{Stealth[length=2.4mm]},line width=0.75pt,color=ink2},
+  node distance=4mm and 5.5mm]
+\node[box=brass] (d1) {\eyebrow{Dossier 1}\\ Which machine? Five stacks, scored};
+\node[box=brass,right=of d1] (d2) {\eyebrow{Dossier 2}\\ Where the money is in the chain};
+\node[box=audit,right=of d2] (dec) {\eyebrow{Decision}\\ Hybrid 80/20 + AEM option bay; hydrogen to a refinery};
+\node[box=ink,below=7mm of d1] (ch) {\eyebrow{1 \textbullet\ Charter}\\ Scope, goals, stakeholders};
+\node[box=ink,right=of ch] (si) {\eyebrow{2 \textbullet\ Site}\\ AHP: Paradip vs Kandla, Kakinada, Tuticorin};
+\node[box=ink,right=of si] (sc) {\eyebrow{3 \textbullet\ Schedule}\\ WBS, CPM, 50,000 simulated timelines};
+\node[box=ink,below=5mm of sc] (op) {\eyebrow{4 \textbullet\ Operations}\\ Hourly dispatch LP, buffer stock, maintenance, demand forecast};
+\node[box=ink,left=of op] (fi) {\eyebrow{5 \textbullet\ Finance \textbullet\ heaviest}\\ SPV cash flows, DSCR, 20,000 futures, the lever ladder};
+\node[box=ink,left=of fi] (ri) {\eyebrow{6 \textbullet\ Risk}\\ Register, heat map, bow-tie, contingency};
+\node[box=ink,below=5mm of ri] (ro) {\eyebrow{7 \textbullet\ Options}\\ Phase 2 under a policy cliff; the AEM switch};
+\node[box=sviolet,right=of ro] (rp) {\eyebrow{8 \textbullet\ Research paper}\\ Do SECI auctions clear below cost?};
+\node[box=sviolet,right=of rp] (gh) {\eyebrow{9--10 \textbullet\ Engine and deck}\\ GitHub repo; the PRM presentation};
+\draw[arr] (d1) -- (d2); \draw[arr] (d2) -- (dec);
+\draw[arr] (dec.south) -- ++(0,-4mm) -| (ch.north);
+\draw[arr] (ch) -- (si); \draw[arr] (si) -- (sc); \draw[arr] (sc) -- (op); \draw[arr] (op) -- (fi); \draw[arr] (fi) -- (ri);
+\draw[arr] (ri) -- (ro); \draw[arr] (ro) -- (rp); \draw[arr] (rp) -- (gh);
+\end{tikzpicture}
+\end{center}
+
+The order is deliberate: the site decides which permits sit on the critical path; the schedule decides how much interest piles up before revenue; and only after the finance model can each risk be priced in rupees rather than adjectives.
+
+\subsection*{The decision record}
+Teams forget why they chose what they chose, so we write it down once, with what would change our minds.
+
+{\tablefont
+\begin{xltabular}{\textwidth}{@{}P{24mm} L L P{15mm}@{}}
+\toprule
+\thead{Decision} & \thead{Why} & \thead{What would change our mind} & \thead{Confidence}\\ \midrule
+\endhead
+Hybrid stack, 80 MW alkaline + 20 MW PEM & Alkaline is the cheapest proven stack (\usd{}3.83/kg); PEM adds fast ramping for about \usd{}0.19/kg more (Section~\ref{sec:finance}). & Alkaline proven to ramp on hybrid power without extra wear. & \confM\\
+AEM as an option, not a core & Cheap materials, unproven at scale; a listed AEM maker is losing money on returned stacks \cite{enapter2026}. & 40,000+ field hours and a warranty that covers them. & \confM\\
+Sell hydrogen to a refinery & Refineries sign 25-year fixed prices (₹279--397/kg) \cite{jmkiocl2025,rwnrl2026}; ammonia auctions look under-priced (Section~\ref{sec:paper}). & Ammonia prices that cover cost. & \confH\\
+Site at Paradip & Buyer next door; port; good grid (Section~\ref{sec:site}). & If we sold ammonia or exported, Kandla would win. & \confM\\
+\bottomrule
+\end{xltabular}}
+\setcounter{section}{0}
+\newpage

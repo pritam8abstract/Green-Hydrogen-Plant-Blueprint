@@ -1,0 +1,204 @@
+% ============================ FRAMEWORKS ==================================
+\newpage
+\phase{Phase three, continued \textbullet\ The frameworks}{Six lenses on one decision}{Macro forces first (STEEPLE, scenarios), then the industry and the firm (Porter, SWOT, VRIO), then what can go wrong (bow-tie). Every lens is scored on the same 1–5 scale.}
+
+\subsection{STEEPLE: the forces outside our control}
+
+PESTEL looks at six outside forces; STEEPLE adds a seventh, ethics. Rather than write two tables that repeat each other, I use STEEPLE, whose first six rows \emph{are} the PESTEL. ``Impact'' is how strongly the force bears on our decision (5 = very high). ``Direction'' says whether it helps (+) or hurts (–) a green-hydrogen project today.
+
+\begin{table}[H]\centering\tablefont
+\caption{STEEPLE scan (Social, Technological, Economic, Environmental, Political, Legal, Ethical).}
+\begin{tabularx}{\textwidth}{@{}p{19mm} L c c c@{}}
+\toprule
+\thead{Force} & \thead{What is happening, with evidence} & \thead{Impact} & \thead{Dir.} & \thead{Conf.}\\ \midrule
+\textbf{Social} & The Mission promises over 6 lakh jobs \cite{govnow2023}. Farmers are insulated from fertiliser costs by a urea price frozen since 2012 \cite{skfert2026}, so there is no consumer push-back, but no consumer pull either. Land and water are local flashpoints. & \score{3} & $\pm$ & \confM\\
+\textbf{Technological} & Electrolyser factories run at about 9\% utilisation \cite{argus2026}; alkaline prices halved in three years \cite{hfn2025}. AEM and SOEC remain unproven at scale \cite{enki2026,h2central2026}. & \score{4} & + & \confH\\
+\textbf{Economic} & Green ammonia clears about 19\% above grey \cite{seci2025}; green hydrogen \usd{}3.5–4 against grey \usd{}2.2 \cite{tribune2025}. Gas is about half imported \cite{kpmg2026} and the rupee has weakened \cite{skfert2026}, which hurts grey too. & \score{5} & – today, + as hedge & \confH\\
+\textbf{Environmental} & A legal 2 kg \coo{} ceiling \cite{drishti2023}; leakage warms (GWP about 11.6) \cite{sand2023}; water is manageable at 20–30 L/kg \cite{rmi2023}. & \score{3} & + & \confH\\
+\textbf{Political} & ₹19,744 crore Mission, ₹17,490 crore of it in SIGHT \cite{govnow2023}; 862,000 t/yr allocated \cite{rw2025}. Purchase mandates for refineries and fertiliser plants are discussed, not yet notified \cite{xynteo2026}. & \score{5} & + & \confH\\
+\textbf{Legal} & Green Hydrogen Standard with BEE certification \cite{drishti2023}; environmental clearance exemption for green hydrogen and ammonia plants \cite{rw2025}; PESO safety approvals \cite{skh2train2026}; EU CBAM charging carbon on imported hydrogen and ammonia since 2026 \cite{coolset}. & \score{4} & + & \confH\\
+\textbf{Ethical} & ``Zero emission'' claims can mislead: embedded emissions are not counted \cite{ieaghr2024}, and Germany's first hydrogen trains ran on a chemical by-product \cite{barnard2026}. Public money subsidises private plants; water in drought districts raises fairness questions. & \score{3} & – & \confM\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{finding}[What STEEPLE tells me]
+The two strongest forces pull in opposite directions: \textbf{politics pushes} (5, +) and \textbf{economics resists} (5, – today). The project lives in the tension between them. Its survival depends on keeping the political support converted into \emph{signed contracts}, because policy moods change faster than a 25-year plant can. \confH
+\end{finding}
+
+\subsection{Scenario planning: four futures to 2035}
+
+I picked the two uncertainties that matter most and are least predictable. \textbf{Across}: how fast the cost of green hydrogen falls (electrolysers, renewables, capital). \textbf{Up}: how certain demand is, from voluntary buying to mandated, contracted purchase.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=1mm,y=1mm,
+  q/.style={rounded corners=2pt,fill=#1,minimum width=73mm,minimum height=46mm,anchor=center},
+  qt/.style={font=\display\fontsize{12}{14}\selectfont,text=ink,anchor=north west},
+  qb/.style={font=\footnotesize,text width=66mm,anchor=north west,align=left}]
+\node[q=sgreen!13] at (38,25) {}; \node[q=wash] at (-38,25) {};
+\node[q=sred!8] at (-38,-25) {}; \node[q=sochre!12] at (38,-25) {};
+\node[qt] at (3,46) {Hydrogen Dawn}; \node[qb] at (3,39) {Mandates bite and costs fall fast. Exports to Europe pay a premium. Every credible stack finds buyers; flexible and next-generation stacks earn the most.};
+\node[qt] at (-73,46) {Subsidy Island}; \node[qb] at (-73,39) {Demand is mandated or contracted, but costs fall slowly. Margins are thin and set by auctions. Only the cheapest proven stack wins. \textbf{India in 2026 looks most like this.}};
+\node[qt] at (-73,-4) {Long Winter}; \node[qb] at (-73,-11) {Neither demand nor cost moves. Cancellations continue, as in 2025 \cite{chemworld2026}. Only plants with signed contracts and conservative technology survive.};
+\node[qt] at (3,-4) {Cheap but Unwanted}; \node[qb] at (3,-11) {Costs fall but nobody is obliged to buy. Merchant sellers fight grey on price; flexible, low-cost stacks and export routes win.};
+\draw[-{Stealth[length=3mm]},line width=1pt,ink2] (-76,0) -- (78,0) node[right,font=\footnotesize,text=ink2,align=left] {cost falls\\ faster};
+\draw[-{Stealth[length=3mm]},line width=1pt,ink2] (0,-50) -- (0,52) node[above,font=\footnotesize,text=ink2] {demand more certain (mandated, contracted)};
+\fill[audit] (-14,7) circle (1.6mm); \node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=audit,anchor=east] at (-16.5,7) {INDIA, 2026};
+\end{tikzpicture}
+\caption{Four futures for Indian green hydrogen to 2035.}
+\end{figure}
+
+\begin{table}[H]\centering\tablefont
+\caption{How well each stack survives each future. Score: 5 = thrives, 1 = stranded.}
+\begin{tabularx}{\textwidth}{@{}L c c c c c@{}}
+\toprule
+\thead{Stack} & \thead{Subsidy Island} & \thead{Hydrogen Dawn} & \thead{Cheap but Unwanted} & \thead{Long Winter} & \thead{Average}\\ \midrule
+Alkaline (pressurised) & 5 & 4 & 3 & 4 & \textbf{4.00}\\
+Hybrid ALK + PEM & 4 & 5 & 4 & 3 & \textbf{4.00}\\
+PEM & 2 & 4 & 4 & 2 & 3.00\\
+AEM & 1 & 5 & 4 & 1 & 2.75\\
+SOEC & 1 & 3 & 2 & 1 & 1.75\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Alkaline and the hybrid tie on average, but they are robust in different ways. Alkaline is strongest in the futures that look most like today; the hybrid is strongest in the futures we hope for. AEM is the classic option payoff: brilliant in two futures, stranded in two. \textbf{Signposts to watch}: notification of green-hydrogen purchase mandates \cite{xynteo2026}; the next SECI tranche's prices; electrolyser factory utilisation \cite{argus2026}; and the first multi-year field data on AEM durability \cite{enki2026}.
+
+\subsection{Porter's five forces: is this a good industry to be in?}
+
+Here the scores measure the \emph{strength of each force}, so 5 means the force squeezes our profits hard.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  f/.style={rounded corners=2pt,fill=wash,text width=44mm,align=left,inner sep=5pt,font=\footnotesize},
+  c/.style={rounded corners=2pt,fill=ink,text=paper,text width=44mm,align=left,inner sep=6pt,font=\footnotesize},
+  ar/.style={-{Stealth[length=2.6mm]},line width=0.9pt,color=audit}]
+\node[c] (r) at (0,0) {{\eyebrowfont\fontsize{6.2}{7}\selectfont RIVALRY \ \ 5 / 5}\\[2pt] Reverse auctions where winner and runner-up were often just ₹0.25 apart; one firm took 51\% of volume \cite{seci2025}.};
+\node[f,above=6mm of r] (e) {{\eyebrowfont\fontsize{6.2}{7}\selectfont\color{brass}NEW ENTRANTS \ \ 4 / 5}\\[2pt] 13 different companies bid in Tranche I \cite{seci2025}; cheap surplus kit lowers the entry ticket \cite{argus2026}.};
+\node[f,below=6mm of r] (s) {{\eyebrowfont\fontsize{6.2}{7}\selectfont\color{brass}SUBSTITUTES \ \ 4 / 5}\\[2pt] Grey ammonia about 19\% cheaper \cite{seci2025}; imported green ammonia; blue hydrogen in theory.};
+\node[f,left=7mm of r] (sp) {{\eyebrowfont\fontsize{6.2}{7}\selectfont\color{brass}SUPPLIER POWER \ \ 2 / 5}\\[2pt] Electrolyser glut at 9\% utilisation \cite{argus2026}. Exception: iridium for PEM \cite{h2tech2022}.};
+\node[f,right=7mm of r] (b) {{\eyebrowfont\fontsize{6.2}{7}\selectfont\color{brass}BUYER POWER \ \ 5 / 5}\\[2pt] SECI aggregates demand and runs e-reverse auctions; a handful of fertiliser buyers; urea price set by government.};
+\draw[ar] (e) -- (r); \draw[ar] (s) -- (r); \draw[ar] (sp) -- (r); \draw[ar] (b) -- (r);
+\end{tikzpicture}
+\caption{Five forces acting on a new Indian green-ammonia producer. 5 = the force squeezes margins hardest.}
+\end{figure}
+
+\begin{verdict}[What Porter tells me]
+Four of the five forces score 4 or 5. Structurally, this is a \textbf{low-margin, commodity-style industry} in which the buyer sets the price. There are only two ways to earn above-normal returns: be the lowest-cost producer (cheap power, cheap capital, tight capex control), or escape to a less crowded corner, such as 25-year refinery contracts, CBAM-protected exports or certified-green premium buyers. The one force in our favour, weak supplier power, is temporary: it lasts only while the electrolyser glut lasts. \confH
+\end{verdict}
+
+\subsection{SWOT: our venture as a whole}
+
+This SWOT is for the venture we are planning: a new Indian producer of green ammonia (and some hydrogen) on a coastal site. Section~\ref{sec:bets} gives a separate SWOT for each technology bet.
+
+\begin{center}
+\begin{tikzpicture}[
+  sw/.style={rounded corners=2pt,fill=#1,text width=72mm,minimum height=46mm,align=left,inner sep=6pt,anchor=north west,font=\footnotesize}]
+\node[sw=sgreen!12] at (0,0) {{\eyebrowfont\fontsize{6.6}{8}\selectfont\color{okgreen}STRENGTHS}\\[3pt]
+\textbullet\ Some of the world's cheapest firmed solar: ₹2.86/kWh with storage \cite{sqsolar2025}\\
+\textbullet\ Contracts already exist: 10-year ammonia, 25-year refinery \cite{seci2025,jmkiocl2025}\\
+\textbullet\ A clear legal definition of ``green'' \cite{drishti2023}\\
+\textbullet\ Coastal sites solve water with cheap desalination \cite{rmi2023}};
+\node[sw=sred!8] at (76mm,0) {{\eyebrowfont\fontsize{6.6}{8}\selectfont\color{badred}WEAKNESSES}\\[3pt]
+\textbullet\ Replaces only about ₹54 of value per ₹100 spent (my model)\\
+\textbullet\ A new entrant lacks the balance sheet and captive power of large groups\\
+\textbullet\ First-of-a-kind integration of variable power with a steady chemical loop\\
+\textbullet\ 10-year contracts on a 25-year asset leave a 15-year price tail};
+\node[sw=sblue!10] at (0,-48mm) {{\eyebrowfont\fontsize{6.6}{8}\selectfont\color{sblue}OPPORTUNITIES}\\[3pt]
+\textbullet\ Refinery demand on 25-year terms at ₹279–397/kg \cite{rwnrl2026,jmkiocl2025}\\
+\textbullet\ EU CBAM makes clean exports pay \cite{coolset}\\
+\textbullet\ Electrolyser glut means cheaper, better-guaranteed kit \cite{argus2026}\\
+\textbullet\ By-product oxygen and future carbon-market revenue};
+\node[sw=sochre!12] at (76mm,-48mm) {{\eyebrowfont\fontsize{6.6}{8}\selectfont\color{warnamber}THREATS}\\[3pt]
+\textbullet\ Winner's curse: rivals bidding below true cost (Section~\ref{sec:cost})\\
+\textbullet\ A fall in gas prices widens the grey-green gap\\
+\textbullet\ OEM insolvency in a consolidating industry \cite{argus2026}\\
+\textbullet\ Policy delay; mandates still not notified \cite{xynteo2026}};
+\end{tikzpicture}
+\end{center}
+
+\subsection{VRIO: what could give us a lasting edge?}
+
+VRIO asks four questions of each resource. Is it \textbf{V}aluable? \textbf{R}are? Costly to \textbf{I}mitate? Are we \textbf{O}rganised to use it? Only a resource that passes all four gives a lasting advantage. The score is my rating of the advantage it gives us (5 = sustained).
+
+\begin{table}[H]\centering\tablefont
+\caption{VRIO screen of the resources our venture could build or buy.}
+\begin{tabularx}{\textwidth}{@{}L c c c c L c@{}}
+\toprule
+\thead{Resource} & \thead{V} & \thead{R} & \thead{I} & \thead{O} & \thead{Outcome} & \thead{Score}\\ \midrule
+Cheap captive renewables and port land & Y & Partly & Partly & Y & Temporary advantage & \score{4}\\
+A SECI 10-year offtake contract & Y & Y & N & Y & Temporary: it is re-auctioned & \score{3}\\
+The electrolyser stack itself (any type) & Y & N & N & Y & Competitive parity: anyone can buy it & \score{2}\\
+Know-how in running electrolysers flexibly with a steady ammonia loop & Y & Y & Y & To build & \textbf{Sustained, if we organise for it} & \score{5}\\
+Cheap long-tenor capital & Y & Y & Y & Depends on sponsor & Advantage for big groups, a gap for us & \score{2}\\
+An hourly, auditable green-certification data trail (for CBAM and buyers) & Y & Y & Partly & To build & Temporary, possibly sustained & \score{3}\\
+An AEM technology licence or partnership & Uncertain & Y & Y & N & Unrealised option & \score{2}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{finding}[Key finding \textbullet\ the moat is not the machine]
+Electrolysers are becoming a commodity; anyone can buy one. What is rare and hard to copy is \textbf{the skill of running a variable-power hydrogen plant against a steady chemical process without losing efficiency or breaking equipment}, plus a clean data trail that proves the product is green hour by hour. That points to an uncomfortable conclusion for a technology bet: \emph{our edge will come from operations and data more than from the stack we pick.} \confM
+\end{finding}
+
+\subsection{Bow-tie: what can go wrong, and what stops it}
+
+A bow-tie puts one feared event in the middle. Threats that could cause it sit on the left, each with a preventive barrier. Consequences if it happens sit on the right, each with a recovery barrier. I chose the event that would kill the project financially, not the most dramatic one.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  th/.style={rounded corners=1.5pt,fill=sred!10,text width=26mm,align=left,font=\scriptsize,inner sep=3pt,minimum height=8.5mm},
+  co/.style={rounded corners=1.5pt,fill=sochre!14,text width=26mm,align=left,font=\scriptsize,inner sep=3pt,minimum height=8.5mm},
+  br/.style={rounded corners=1pt,fill=ink,text=paper,text width=17mm,align=center,font=\tiny,inner sep=2pt,minimum height=7mm},
+  top/.style={circle,fill=audit,text=paper,text width=24mm,align=center,font=\scriptsize\bfseries,inner sep=1pt}]
+\node[top] (t) at (0,0) {Plant cannot deliver contracted green ammonia at contracted cost};
+\foreach \i/\txt/\bar in {
+ 1/{T1 Capex and schedule overrun \hfill L4 I5}/{FEED to AACE Class 3 before FID; fixed-price EPC},
+ 2/{T2 Less sun and wind than planned \hfill L3 I4}/{Size debt on P90 energy; oversize and store},
+ 3/{T3 Stacks wear out faster \hfill L3 I4}/{Service agreement with degradation guarantee},
+ 4/{T4 Payment or subsidy delay \hfill L3 I3}/{SECI as intermediary; working-capital reserve},
+ 5/{T5 Water plant outage \hfill L2 I4}/{Two RO trains; stored water},
+ 6/{T6 Hydrogen leak or fire \hfill L1 I5}/{PESO design, leak detection, auto shut-off}}{
+ \node[th] (a\i) at (-7.1,3.05-\i*0.98) {\txt};
+ \node[br] (b\i) at (-4.2,3.05-\i*0.98) {\bar};
+ \draw[-{Stealth[length=1.6mm]},ink2,line width=0.5pt] (a\i) -- (b\i);
+ \draw[-{Stealth[length=1.6mm]},ink2,line width=0.5pt] (b\i.east) -- (t.west);
+}
+\foreach \i/\txt/\bar in {
+ 1/{C1 Shortfall penalties under the offtake \hfill S4}/{Ammonia buffer stock; insurance},
+ 2/{C2 Debt covenant (DSCR) breach \hfill S5}/{Six-month debt reserve; cash sweep},
+ 3/{C3 Loses ``green'' certification \hfill S4}/{Hourly metering; banked renewable power},
+ 4/{C4 Safety incident, licence suspended \hfill S5}/{Emergency plan; insurance},
+ 5/{C5 Reputation hit, lost future auctions \hfill S3}/{Transparent reporting to SECI and lenders}}{
+ \node[br] (rb\i) at (4.2,2.56-\i*0.98) {\bar};
+ \node[co] (c\i) at (7.1,2.56-\i*0.98) {\txt};
+ \draw[-{Stealth[length=1.6mm]},ink2,line width=0.5pt] (t.east) -- (rb\i.west);
+ \draw[-{Stealth[length=1.6mm]},ink2,line width=0.5pt] (rb\i) -- (c\i);
+}
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (-7.1,2.75) {THREATS};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (-4.2,2.75) {PREVENT};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (4.2,2.75) {RECOVER};
+\node[font=\eyebrowfont\fontsize{6}{7}\selectfont,text=brass] at (7.1,2.75) {CONSEQUENCES};
+\end{tikzpicture}
+\caption{Bow-tie for the project's critical event. L = likelihood, I = impact, S = severity, each on 1–5 (5 = worst).}
+\end{figure}
+
+\begin{table}[H]\centering\tablefont
+\caption{Threats ranked by risk score (likelihood $\times$ impact, maximum 25).}
+\begin{tabularx}{\textwidth}{@{}L c c c L c@{}}
+\toprule
+\thead{Threat} & \thead{L} & \thead{I} & \thead{Score} & \thead{Why I rate it so} & \thead{Conf.}\\ \midrule
+T1 Capex and schedule overrun & 4 & 5 & \textbf{20} & Capex is the largest cost swing (\usd{}1.30/kg); an early estimate can run 30–100\% high \cite{epcland} & \confM\\
+T2 Renewable shortfall & 3 & 4 & 12 & Electricity is the second-largest swing (\usd{}0.84/kg) & \confM\\
+T3 Faster stack wear & 3 & 4 & 12 & No long field record at variable load for newer stacks \cite{enki2026} & \confM\\
+T4 Payment or subsidy delay & 3 & 3 & 9 & State intermediary reduces but does not remove it & \confL\\
+T5 Water outage & 2 & 4 & 8 & Small cost, but it stops production & \confL\\
+T6 Leak or fire & 1 & 5 & 5 & Low frequency, catastrophic severity; well regulated \cite{skh2train2026} & \confM\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The bow-tie confirms what the tornado chart said: \textbf{the most dangerous threat is a project-management one}. An AACE Class 5 (concept-stage) estimate can be off by $-20$\% to $-50$\% on the low side and $+30$\% to $+100$\% on the high side; a Class 3 estimate, typically used to authorise the budget, narrows that to roughly $-10/-20\%$ and $+10/+30\%$ \cite{epcland}. Getting from one to the other before the investment decision is the cheapest risk reduction available to us. \confH

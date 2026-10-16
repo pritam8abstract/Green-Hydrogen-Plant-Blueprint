@@ -1,0 +1,138 @@
+% ------------------------------------------------------------------
+%  Ledger-paper house style (cream paper, audit-red margin rule,
+%  ink-navy serif titles, brass eyebrows, ink band at the foot)
+%  Compile with XeLaTeX.
+% ------------------------------------------------------------------
+% (\documentclass lives in main.tex so editors can find the main file)
+\usepackage[a4paper,top=22mm,bottom=26mm,left=31mm,right=21mm,footskip=14mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,calc,fit,backgrounds,decorations.pathmorphing,shadows}
+\usepackage{eso-pic}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs,tabularx,array,makecell,colortbl,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{xltabular}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+% ---- fonts --------------------------------------------------------
+\setmainfont{Newsreader}[Path=../../assets/fonts/, Extension=.ttf, UprightFont=*-Regular, ItalicFont=*-Italic,
+  BoldFont=*-SemiBold, BoldItalicFont=*-SemiBoldItalic, Numbers={Proportional,OldStyle}, Ligatures=TeX]
+\newfontfamily\display{Fraunces}[Path=../../assets/fonts/, Extension=.ttf, UprightFont=*-Bold, ItalicFont=*-Italic,
+  BoldFont=*-Black, BoldItalicFont=*-SemiBoldItalic, Ligatures=TeX]
+\newfontfamily\displaysemi{Fraunces}[Path=../../assets/fonts/, Extension=.ttf, UprightFont=*-SemiBold, ItalicFont=*-LightItalic, Ligatures=TeX]
+\newfontfamily\tabfont{Newsreader}[Path=../../assets/fonts/, Extension=.ttf, UprightFont=*-Regular, ItalicFont=*-Italic,
+  BoldFont=*-Bold, BoldItalicFont=*-BoldItalic, Numbers={Lining,Monospaced}, Ligatures=TeX]
+\setsansfont{Inter}[UprightFont=* Medium, BoldFont=* SemiBold, ItalicFont=* Medium Italic, Ligatures=TeX]
+\newfontfamily\eyebrowfont{Inter}[UprightFont=* SemiBold, LetterSpace=14]
+\setmathfont{Latin Modern Math}
+\setstretch{1.12}
+
+% ---- colours -------------------------------------------------------
+\definecolor{paper}{HTML}{FBF8F1}
+\definecolor{ink}{HTML}{1B2A41}
+\definecolor{ink2}{HTML}{52514E}
+\definecolor{audit}{HTML}{8E1B1B}
+\definecolor{brass}{HTML}{9A7230}
+\definecolor{rule}{HTML}{E4DDCC}
+\definecolor{faint}{HTML}{EDE6D5}
+\definecolor{wash}{HTML}{F3EEE2}
+\definecolor{sblue}{HTML}{2F6DB0}
+\definecolor{sochre}{HTML}{C47A12}
+\definecolor{sgreen}{HTML}{2E8B5E}
+\definecolor{sviolet}{HTML}{7A62B8}
+\definecolor{sred}{HTML}{C0433F}
+\definecolor{okgreen}{HTML}{2E7D4F}
+\definecolor{warnamber}{HTML}{A86A06}
+\definecolor{badred}{HTML}{A23431}
+\pagecolor{paper}
+\color{ink}
+
+% ---- page furniture: red double margin rule + ink band at the foot ----
+\newcommand{\ledgerfurniture}{%
+  \AddToShipoutPictureBG{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[audit,line width=0.5pt] ([xshift=22mm]current page.north west) -- ([xshift=22mm]current page.south west);
+      \draw[audit,line width=0.5pt] ([xshift=23.2mm]current page.north west) -- ([xshift=23.2mm]current page.south west);
+      \fill[ink] (current page.south west) rectangle ([yshift=9mm]current page.south east);
+    \end{tikzpicture}}}
+\newcommand{\ruledpaper}{%
+  \AddToShipoutPictureBG*{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \foreach \y in {14,22,...,284} \draw[faint,line width=0.4pt] ([yshift=\y mm]current page.south west) -- ([yshift=\y mm]current page.south east);
+    \end{tikzpicture}}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\hspace*{-8mm}\raisebox{-6.4mm}{\color{paper}\eyebrowfont\fontsize{6.6}{8}\selectfont GREEN HYDROGEN, WITHOUT THE HYPE \ \textbullet\ \ PHASE 1 KNOWLEDGE DOSSIER}}
+\fancyfoot[R]{\raisebox{-6.4mm}{\color{paper}\eyebrowfont\fontsize{7}{8}\selectfont\thepage}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[R]{\raisebox{-6.4mm}{\color{paper}\eyebrowfont\fontsize{7}{8}\selectfont\thepage}}}
+
+% ---- headings --------------------------------------------------------
+\newcommand{\eyebrow}[1]{{\color{brass}\eyebrowfont\fontsize{7.6}{9}\selectfont\MakeUppercase{#1}}}
+\newcommand{\redrule}{{\color{audit}\rule{18mm}{1.1pt}}}
+\titleformat{\section}[display]{\color{ink}}
+  {\eyebrow{\phaseeyebrow}}{2pt}{\display\fontsize{22}{26}\selectfont}[\vspace{3pt}\redrule]
+\titlespacing*{\section}{0pt}{6pt}{12pt}
+\titleformat{\subsection}{\displaysemi\fontsize{13.2}{16}\selectfont\color{ink}}{\color{audit}\thesubsection\hspace{0.6em}}{0pt}{}
+\titlespacing*{\subsection}{0pt}{14pt}{5pt}
+\titleformat{\subsubsection}[runin]{\bfseries\color{ink}}{}{0pt}{}[]
+\titlespacing*{\subsubsection}{0pt}{8pt}{0.6em}
+\newcommand{\phaseeyebrow}{}
+\newcommand{\phase}[3]{% eyebrow, title, italic subtitle
+  \renewcommand{\phaseeyebrow}{#1}%
+  \section{#2}%
+  \vspace{-4pt}{\displaysemi\itshape\fontsize{12}{15}\selectfont\color{ink2}#3\par}\vspace{10pt}}
+
+\setlist{itemsep=2pt,topsep=4pt,leftmargin=1.3em}
+\setlist[itemize]{label={\color{audit}\textbullet}}
+\captionsetup{font={small,it},labelfont={bf,color=audit,up},labelsep=period,justification=raggedright,singlelinecheck=false,skip=4pt}
+\captionsetup[table]{position=top}
+
+% ---- citations: [n] in audit red, hyperlinked ----------------------------
+\makeatletter
+\renewcommand{\@cite}[2]{{\color{audit}[{#1\if@tempswa , #2\fi}]}}
+\renewcommand{\@biblabel}[1]{{\color{audit}\tabfont[#1]}}
+\makeatother
+\hypersetup{colorlinks=true,linkcolor=ink,citecolor=audit,urlcolor=sblue}
+
+% ---- confidence tags -----------------------------------------------------
+\newcommand{\conftag}[2]{\tikz[baseline=(t.base)]\node[rounded corners=2pt,inner xsep=3pt,inner ysep=1.4pt,fill=#1!12,draw=#1!70,line width=0.4pt](t){\color{#1}\sffamily\fontsize{6.3}{7}\selectfont #2};}
+\newcommand{\confH}{\conftag{okgreen}{HIGH}}
+\newcommand{\confM}{\conftag{warnamber}{MEDIUM}}
+\newcommand{\confL}{\conftag{badred}{LOW}}
+\newcommand{\score}[1]{\tikz[baseline=-0.6ex]{\foreach \i in {1,...,5}{\pgfmathparse{\i<=#1?"ink":"rule"}\fill[\pgfmathresult] (\i*1.9mm,0) circle (0.72mm);}}}
+
+% ---- boxes ------------------------------------------------------------------
+\tcbset{ledger/.style={enhanced,breakable,colback=wash,colframe=wash,boxrule=0pt,arc=1.5pt,
+  left=9pt,right=9pt,top=6pt,bottom=6pt,fontupper=\small}}
+\newtcolorbox{plainwords}[1][In plain words]{ledger,borderline west={2.4pt}{0pt}{brass},
+  title={\eyebrow{#1}},attach title to upper,after title={\par\smallskip}}
+\newtcolorbox{finding}[1][Key finding]{ledger,colback=white!60!paper,borderline west={2.4pt}{0pt}{ink},
+  title={\eyebrow{#1}},attach title to upper,after title={\par\smallskip}}
+\newtcolorbox{verdict}[1][My verdict]{ledger,colback=audit!5!paper,borderline west={2.4pt}{0pt}{audit},
+  title={{\color{audit}\eyebrowfont\fontsize{7.6}{9}\selectfont\MakeUppercase{#1}}},attach title to upper,after title={\par\smallskip}}
+
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcommand{\tablefont}{\tabfont\fontsize{8.6}{10.6}\selectfont}
+\renewcommand{\arraystretch}{1.18}
+\renewcommand{\thead}[1]{{\color{brass}\eyebrowfont\fontsize{6.6}{8}\selectfont\MakeUppercase{#1}}}
+\newcommand{\usd}{US\$}
+\newcommand{\coo}{CO\textsubscript{2}}
+\newcommand{\htwo}{H\textsubscript{2}}
+\newcommand{\nhthree}{NH\textsubscript{3}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt}
+\widowpenalty=10000 \clubpenalty=10000

@@ -1,0 +1,75 @@
+% ============================ ANNEXES ==================================
+\newpage
+\phase{Annexes}{What I checked, and how the model works}{Annex A corrects the Gemini brief where it was wrong; Annex B lists every model input; Annex C says how to rerun it.}
+
+\subsection*{Annex A \textbullet\ Fact-check of the Gemini research brief}
+\addcontentsline{toc}{subsection}{Annex A}
+
+The Gemini brief \cite{gemini2026} was a useful map but not a source. I checked each claim I reused against primary or close-to-primary sources. Most held up. These did not, or needed qualifying.
+
+{\tablefont
+\begin{xltabular}{\textwidth}{@{}L >{\RaggedRight\arraybackslash}p{19mm} L@{}}
+\caption{Gemini claims, verdicts and corrections.}\\
+
+\toprule
+\thead{What Gemini said} & \thead{Verdict} & \thead{What is actually true}\\ \midrule
+\endfirsthead
+\toprule\thead{What Gemini said} & \thead{Verdict} & \thead{What is actually true}\\ \midrule
+\endhead
+
+SIGHT subsidy is ₹8.82 per kg \emph{of hydrogen}, falling to ₹5.30 & \textcolor{badred}{\textbf{Wrong unit}} & It is per kg \emph{of green ammonia}: ₹8.82, ₹7.06, ₹5.30 over three years \cite{sq2024}. Since a kilogram of hydrogen makes about 5.6 kg of ammonia, the error overstates the subsidy about 5.6 times.\\
+Nine Mode-2A auction results & \textcolor{warnamber}{\textbf{Incomplete}} & There were 13 auctions totalling 724,000 t/yr. Missing: GNFC Bharuch (Onix, ₹52.50), Coromandel Vizag (ACME, ₹51.89), MBAPL-III Dhule (SCC, ₹53.05), Paradeep Phosphates Zuarinagar (ACME, ₹62.84). The nine listed prices are correct \cite{seci2025}.\\
+Exchange rate of ₹83.50 per dollar & \textcolor{warnamber}{\textbf{Outdated}} & The rupee traded around ₹86.6–91.9 in 2025–26 \cite{skfert2026}. I convert auction prices at ₹87 and plan at ₹90.\\
+``Over 400,000 t'' of production capacity allocated (its Section 4.4) & \textcolor{badred}{\textbf{Inconsistent}} & Contradicts its own earlier figure. MNRE: 862,000 t/yr allocated to 19 companies \cite{rw2025}.\\
+Chinese alkaline at \usd{}300–500/kW ``installed'' & \textcolor{warnamber}{\textbf{Mislabelled}} & That is roughly an equipment price. IEA installed cost is \usd{}500–1,100/kW in China and \usd{}1,900–2,500/kW for systems made outside China \cite{argus2026}.\\
+Model grey ammonia as a ``mean-reverting geometric Brownian motion'' & \textcolor{badred}{\textbf{Contradiction}} & Geometric Brownian motion does not mean-revert. Commodity prices are better modelled with an Ornstein–Uhlenbeck process on the log price (the Schwartz one-factor model). I flag this for the GitHub model.\\
+FID needs an AACE Class 2 or Class 1 estimate & \textcolor{warnamber}{\textbf{Overstated}} & AACE places budget authorisation typically at Class 3 (10–40\% definition); Class 2 is for control and bids \cite{epcland}.\\
+Megaprojects overrun 33\%, slip 30\%, 64\% suffer production shortfalls & \textcolor{ink2}{\textbf{Unverified}} & I could not open the cited paper. The figures are plausible for oil-and-gas megaprojects but untested for hydrogen. Not used in my analysis. \confL\\
+SECI contracts are 10 years, creating a 15-year merchant tail & \textcolor{okgreen}{\textbf{True, but partial}} & True for ammonia \cite{pvm2025}. It misses that refinery contracts run 25 years \cite{jmkiocl2025,rwnrl2026}, which changes the merchant-risk picture for a hydrogen seller.\\
+PEM can be built at only about 3–7.5 GW a year because of iridium & \textcolor{okgreen}{\textbf{Consistent}} & Matches 7–8 t/yr of iridium at about 400 kg/GW, assuming PEM gets 20–40\% of supply \cite{h2tech2022}.\\
+Green Hydrogen Standard of 2 kg \coo{}e/kg & \textcolor{okgreen}{\textbf{Verified}} & Well-to-gate, 12-month average, BEE as nodal authority \cite{drishti2023}.\\
+Grey ammonia at \usd{}515/t; green premium 10–24\% & \textcolor{okgreen}{\textbf{Verified}} & \usd{}515/t \cite{pvm2025}; lowest bid 10\% above grey \cite{jmkammonia2025}; my volume-weighted figure is 19\%.\\
+Hydrogen trains, cars and daily-life uses & \textcolor{ink2}{\textbf{Absent}} & Not covered. Added in Phase 1.\\
+\bottomrule
+\end{xltabular}}
+
+\subsection*{Annex B \textbullet\ Model inputs}
+\addcontentsline{toc}{subsection}{Annex B}
+
+Every uncertain input is drawn from a triangular distribution (low, most likely, high). I chose triangular rather than a fancier shape because the evidence gives ranges, not shapes; claiming to know the tails better than the sources do would be false precision.
+
+\begin{table}[H]\centering\tablefont
+\caption{Inputs shared by all stacks.}
+\begin{tabularx}{\textwidth}{@{}L c c c L@{}}
+\toprule
+\thead{Input} & \thead{Low} & \thead{Likely} & \thead{High} & \thead{Basis}\\ \midrule
+Electricity, hybrid renewables (\usd{}/MWh) & 32 & 38 & 48 & Solar + storage at ₹2.86/kWh \cite{sqsolar2025}; firm power at ₹5.25 \cite{pvmfdre2026}\\
+Cost of capital (WACC) & 8.5\% & 10\% & 12.5\% & My assumption; Gemini estimated 9.5–11.5\% \cite{gemini2026}\\
+Share of hours renewables can feed the stack & 55\% & 62\% & 68\% & My assumption for an oversized solar + wind hybrid\\
+Plant life & \multicolumn{3}{c}{25 years} & Standard infrastructure life\\
+Water & \multicolumn{3}{c}{\usd{}0.03/kg} & Purification at most \usd{}0.10/kg \cite{rmi2023}\\
+Exchange rate & \multicolumn{3}{c}{₹90 per \usd{}} & Rupee 86.6–91.9 in 2025–26 \cite{skfert2026}\\
+Grey hydrogen benchmark & \multicolumn{3}{c}{\usd{}2.1–2.2/kg} & \cite{jmkiocl2025,tribune2025}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]\centering\tablefont
+\caption{Stack-specific inputs (low / likely / high).}
+\begin{tabularx}{\textwidth}{@{}L C C C c c c@{}}
+\toprule
+\thead{Stack} & \thead{Installed \usd{}/kW} & \thead{kWh per kg} & \thead{Stack life (h)} & \thead{Repl. \% capex} & \thead{O\&M \%/yr} & \thead{Hours used}\\ \midrule
+Alkaline & 800 / 1,100 / 1,600 & 50 / 53 / 57 & 60k / 75k / 90k & 35 & 2.0 & 92\%\\
+Hybrid & 900 / 1,250 / 1,750 & 50.5 / 53.2 / 57.2 & 55k / 72k / 88k & 35 & 2.1 & 97.5\%\\
+PEM & 1,300 / 1,800 / 2,400 & 51 / 54 / 58 & 40k / 60k / 80k & 35 & 2.5 & 99\%\\
+AEM & 1,000 / 1,700 / 3,000 & 51 / 55 / 62 & 15k / 30k / 50k & 40 & 3.0 & 98\%\\
+SOEC$^{*}$ & 2,800 / 3,800 / 5,600 & 37 / 40 / 44 & 10k / 20k / 30k & 45 & 4.0 & 80–90\% CF\\
+\bottomrule
+\multicolumn{7}{@{}p{\textwidth}@{}}{\footnotesize\itshape $^{*}$SOEC runs on firm power at \usd{}50/58/66 per MWh plus 8 kWh of heat per kg at \usd{}12/MWh. Capex ranges anchor on IEA 2025 installed costs \cite{argus2026}, IEA's earlier technology ranges \cite{h2techcapex2022} and IRENA \cite{irena2020}; efficiency and life on IRENA \cite{irena2020}. ``Hours used'' is the share of renewable-available hours each stack can capture, reflecting minimum-load limits \cite{ammoniaenergy2023}.}
+\end{tabularx}
+\end{table}
+
+\subsection*{Annex C \textbullet\ Rerunning the numbers}
+\addcontentsline{toc}{subsection}{Annex C}
+
+The analysis lives in three short Python files, ready for our GitHub repository: \texttt{model.py} (levelised cost, Monte Carlo with 100,000 draws per stack, tornado, SECI back-calculation), \texttt{believe.py} (the ``what you have to believe'' ladder and the AEM comparison) and \texttt{charts.py} (every chart in this dossier). The random seed is fixed at 20261013, so anyone running the files gets exactly the numbers printed here. The obvious next upgrades are a proper project-finance cash-flow waterfall (debt service cover, loan-life cover), a mean-reverting model for gas and ammonia prices, and hourly solar and wind profiles for the four candidate ports instead of a single ``hours available'' number.

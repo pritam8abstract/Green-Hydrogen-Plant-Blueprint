@@ -1,0 +1,89 @@
+% ============================ THE BET ==================================
+\newpage
+\phase{The bet}{What each technology offers, and where I lean}{A SWOT for every stack, the options on the table, my recommendation, and how sure I am of each finding.}
+
+\subsection{What each bet offers}\label{sec:bets}
+
+\begin{table}[H]\centering\tablefont
+\caption{A SWOT for each technology bet, compressed to the point that matters most in each box.}
+\begin{tabularx}{\textwidth}{@{}p{17mm} L L L L@{}}
+\toprule
+\thead{Bet} & \thead{Strength} & \thead{Weakness} & \thead{Opportunity} & \thead{Threat}\\ \midrule
+\textbf{Alkaline} & Cheapest kilogram (\usd{}3.83 base, P50 \usd{}4.07); most bankable; Indian factories coming & Wastes the shoulders of the solar day; high minimum load & Glut gives buying power on price and warranty & Chinese concentration and OEM failures; rupee risk\\
+\textbf{Hybrid ALK + PEM} & Near-alkaline cost (+\usd{}0.19/kg) with better use of renewable hours; top under the venture lens & Two OEMs, harder integration, one more failure point & The PEM slot can later host AEM modules: a built-in switching option & Integration risk lands on us unless one EPC wraps it\\
+\textbf{PEM} & Best at following sun and wind; compact; mature & \usd{}1.26/kg dearer than alkaline; iridium bound & Iridium thrifting could cut cost sharply & Iridium supply ceiling of a few GW a year\\
+\textbf{AEM} & No precious metals; PEM-like flexibility; an Indian factory is planned & Unproven durability; small makers; \usd{}2.00/kg dearer today & If it wins, a scarce IP and manufacturing position & Stranded in two of four futures; makers may not survive\\
+\textbf{SOEC} & Highest electrical efficiency & Needs constant heat; short life; leading maker paused & Pairing with industrial waste heat in the 2030s & Market not ready; wrong fit for solar\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+One result changed how I think about the AEM bet. I asked what happens if AEM delivers everything its backers promise by the early 2030s: \usd{}700/kW installed, 60,000-hour stacks, 52 kWh/kg. It would make hydrogen at about \textbf{\usd{}2.97/kg}. But alkaline under the \emph{same} favourable conditions (\usd{}800/kW, cheaper power, slightly cheaper capital) would make it at about \textbf{\usd{}3.03/kg}. Even a winning AEM roughly ties a maturing alkaline on cost. \confM
+
+\begin{finding}[Key finding \textbullet\ AEM is a sovereignty bet, not a cost bet]
+The case for AEM is not that it will make cheaper hydrogen; it probably will not be much cheaper. The case is that it needs \emph{no iridium, no platinum and no Chinese supply chain}, and that whoever masters it owns scarce intellectual property and manufacturing know-how. That is a venture-capital thesis, and it should be priced like one: small, staged and optional. It should not carry a bank-financed 100 MW plant. \confM
+\end{finding}
+
+\subsection{The options on the table}
+
+\begin{table}[H]\centering\tablefont
+\caption{The five realistic options for our plant.}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{31mm} L L c@{}}
+\toprule
+\thead{Option} & \thead{Choose it if\dots} & \thead{What you give up} & \thead{PF / VC score}\\ \midrule
+\textbf{A. Bank on alkaline} \newline 100 MW pressurised alkaline & The priority is the lowest cost and the easiest loan. Best fit for ``Subsidy Island'' & Some renewable hours; upside from new technology & 3.90 / 3.55\\
+\textbf{B. Build the hybrid} \newline 80 MW alkaline + 20 MW PEM & You want near-lowest cost \emph{and} flexibility, plus a slot for future technology & About \usd{}0.19/kg and some integration simplicity & 3.80 / 3.90\\
+\textbf{C. All PEM} & Iridium-light stacks arrive below about \usd{}1,300/kW with strong warranties & About \usd{}1.26/kg today & 2.85 / 2.80\\
+\textbf{D. AEM as a call option} \newline a 2–5 MW pilot bay beside the main plant & You want exposure to the next technology without betting the plant & A small, ring-fenced sum & 1.85 / 3.00\\
+\textbf{E. SOEC on watch} & Only where steady industrial waste heat is available & n/a for us now & 1.20 / 1.80\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{verdict}[Where I lean, before we decide together]
+\textbf{Bank on alkaline, build for the hybrid, hold AEM as a call option.} In practice that is Option B with Option D attached: 80 MW of pressurised alkaline as the bankable core, 20 MW of PEM to soak up the variable hours, and a small, separately funded AEM pilot bay. It costs about 5\% more per kilogram than pure alkaline in my base case, and in return it buys three things a lender and an investor both value: better use of the power we pay for, resilience if one OEM fails, and a ready-made slot to switch technology later without rebuilding the plant.
+
+\smallskip I would set clear triggers for exercising the AEM option, not hopes: \emph{at least 20,000 hours of field data on a multi-megawatt unit, installed cost below about \usd{}800/kW, and a supplier with a balance sheet that can stand behind a warranty.} If those triggers are not met by the first stack replacement (around year eight to ten), the bay is repurposed as more PEM and the option simply expires. That is how a finance person turns a technology dream into a decision with a known maximum loss. \confM
+\end{verdict}
+
+Option A is a perfectly defensible choice, and if the project brief puts the weight on bankability and simplicity, I would not argue hard against it. The decision is ours to make as a team, and the rest of the project (schedule, risk register, financial model, real-option valuation) will be built on whichever stack we choose.
+
+\subsection{Key findings}
+
+\begin{enumerate}[leftmargin=1.6em,label={\color{audit}\display\arabic*},itemsep=3pt]
+\item \textbf{Hydrogen is a chemical first and a fuel second.} India already uses about 6.7 Mt a year, almost all of it grey; the quickest climate win is cleaning that up, not new hydrogen gadgets \cite{igef2021}.
+\item \textbf{Hydrogen trains and cars are symbols, not the main market.} Indian rail is 99.2\% electrified \cite{indinfra2025}, and battery cars use electricity two to three times as efficiently \cite{vw2020}.
+\item \textbf{India pays for grey hydrogen twice}: about 55–70 Mt of \coo{} a year (my estimate), and a fertiliser subsidy of ₹1.86 lakh crore exposed to imported gas and a weak rupee \cite{skfert2026,kpmg2026}.
+\item \textbf{Green hydrogen is a hedge}: it turns a volatile, dollar-linked cost into a fixed rupee cost.
+\item \textbf{Alkaline makes the cheapest kilogram}: about \usd{}3.83 in my base case and \usd{}4.07 at the median, matching the market's \usd{}3.5–4 \cite{tribune2025}.
+\item \textbf{The auctions assume about \usd{}2.5–2.9/kg}, which needs almost every assumption to go right: a winner's-curse risk worth watching \cite{seci2025}.
+\item \textbf{Capex is the biggest lever} (\usd{}1.30/kg swing), so cost control is a project-management problem before it is a technology problem.
+\item \textbf{No stack pays for itself yet}: the best replaces about ₹54 of grey hydrogen per ₹100 spent. The offtake contract is the business.
+\item \textbf{The industry structure is harsh}: four of Porter's five forces score 4 or 5. Advantage must come from cost position and operating know-how, not from the machine.
+\item \textbf{AEM is a sovereignty bet, not a cost bet}: worth owning as a small option, not as the foundation.
+\end{enumerate}
+
+\subsection{How sure am I? A confidence ledger}
+
+Different studies give different numbers, so here is where I would and would not stake the project.
+
+\begin{table}[H]\centering\tablefont
+\caption{Confidence in the dossier's main claims.}
+\begin{tabularx}{\textwidth}{@{}L c L@{}}
+\toprule
+\thead{Claim} & \thead{Confidence} & \thead{Why}\\ \midrule
+Grey hydrogen emits 10–12 kg \coo{} per kg; world production released 920 Mt in 2023 & \confH & IEA primary data \cite{ieaghr2024}\\
+SECI Tranche I prices, winners and volumes & \confH & Read directly from SECI's own result sheet \cite{seci2025}\\
+Mission targets and outlay & \confH & Cabinet approval figures \cite{govnow2023}\\
+Battery cars are 2–3 times more efficient than fuel-cell cars & \confH & Consistent across sources; VW figures \cite{vw2020}\\
+India's current hydrogen use is about 6–7 Mt & \confM & Modelled from chemistry in 2021, not measured \cite{igef2021}\\
+Alkaline LCOH of about \usd{}3.8–4.1/kg & \confM & My model; calibrates to analyst figures \cite{tribune2025}, but inputs are ranges\\
+Auctions imply \usd{}2.5–2.9/kg hydrogen & \confM & Depends on my ammonia-loop cost assumption\\
+Stack rankings (alkaline > hybrid > PEM > AEM > SOEC on cost) & \confH & Robust across all 100,000 simulations\\
+Electrolyser factory glut (about 9\% utilisation) & \confH & IEA via Argus \cite{argus2026}\\
+AEM commercial status and Indian factory plans & \confL & Industry aggregator; few primary sources \cite{enki2026}\\
+Cost of capital 8.5–12.5\%; renewable hours 55–68\% & \confL & My assumptions; need lender and site data\\
+Long-lead times for compressors and switchgear & \confL & From the Gemini brief, not independently verified \cite{gemini2026}\\
+\bottomrule
+\end{tabularx}
+\end{table}

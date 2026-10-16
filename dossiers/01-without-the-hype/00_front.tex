@@ -1,0 +1,121 @@
+% ============================ COVER ==================================
+\thispagestyle{empty}
+\ruledpaper
+\AddToShipoutPictureBG*{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[audit,line width=0.5pt] ([xshift=22mm]current page.north west) -- ([xshift=22mm]current page.south west);
+    \draw[audit,line width=0.5pt] ([xshift=23.2mm]current page.north west) -- ([xshift=23.2mm]current page.south west);
+    \fill[ink] (current page.south west) rectangle ([yshift=16mm]current page.south east);
+    \node[anchor=west,text=paper,font=\eyebrowfont\fontsize{7}{9}\selectfont] at ([xshift=31mm,yshift=8mm]current page.south west)
+      {NIT WARANGAL \ \textbullet\ \ DEPARTMENT OF MANAGEMENT STUDIES \ \textbullet\ \ PRM PROJECT FILE};
+    % a quiet molecule motif, top right
+    \begin{scope}[shift={([xshift=-38mm,yshift=-52mm]current page.north east)}]
+      \draw[rule,line width=0.8pt] (0,0) circle (17mm);
+      \draw[rule,line width=0.8pt] (0,0) circle (11mm);
+      \fill[ink] (-4.2mm,0) circle (3.4mm); \fill[ink] (4.2mm,0) circle (3.4mm);
+      \draw[paper,line width=1.2pt] (-1.4mm,0)--(1.4mm,0);
+      \node[font=\display\fontsize{9}{9}\selectfont,text=paper] at (-4.2mm,0) {H};
+      \node[font=\display\fontsize{9}{9}\selectfont,text=paper] at (4.2mm,0) {H};
+      \fill[sgreen] (0,17mm) circle (1.3mm); \fill[brass] (15.6mm,-6.7mm) circle (1.1mm); \fill[audit] (-12mm,-12mm) circle (1.0mm);
+    \end{scope}
+  \end{tikzpicture}}
+\vspace*{30mm}
+\eyebrow{Phase 1 knowledge dossier \ \textbullet\ \ written October 2026}\par\vspace{8mm}
+{\display\fontsize{40}{44}\selectfont\color{ink} Green Hydrogen,\\[2pt] Without the Hype\par}
+\vspace{6mm}\redrule\par\vspace{6mm}
+{\displaysemi\itshape\fontsize{15}{20}\selectfont\color{ink2}What the molecule does for us every day, why the way\\ we make it today has to end, and which machine\\ I would trust to make it tomorrow.\par}
+\vspace{22mm}
+\begin{minipage}[t]{0.52\textwidth}
+\eyebrow{Written by}\par\smallskip
+{\large Dhritabrata Swarnakar}\par
+{\small\color{ink2} MBA (Finance major, Analytics minor) \\ National Institute of Technology, Warangal}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\textwidth}
+\eyebrow{For}\par\smallskip
+{\large Project Management (PRM)}\par
+{\small\color{ink2} Prof.\ P.\,R.\,C.\ Gopal \\ Project partner: Shalvi Bhatnagar}
+\end{minipage}
+\vfill
+\begin{minipage}{0.92\textwidth}\small\color{ink2}\itshape
+Every number in here carries a bracketed source you can click, and the claims that matter carry a confidence tag:
+\confH\ I would stake the project on it, \confM\ directionally right but sources disagree or are secondary, \confL\ treat as a working assumption.
+\end{minipage}
+\vspace{10mm}
+\newpage
+
+% ============================ VISION ==================================
+\phase{Vision}{Clean molecules that pay their own way}{Why I am doing this, and the three beliefs that shape every page that follows.}
+
+India already runs on hydrogen. It is in the urea that feeds the wheat, in the diesel that has had its sulphur stripped out, in the vanaspati in a dhaba kitchen. Almost none of it is clean. We make it by breaking natural gas, a large share of which we import, and we vent the carbon into the air as we do it. So we pay twice: once in dollars for the gas, once in the climate bill.
+
+My vision for this project is short to say and hard to do: \textbf{make India's hydrogen clean where it matters most, and make it pay for itself.} Not clean as a slogan. Clean as a plant that a lender would fund, a fertiliser company would buy from, and a farmer would never notice except that the bag got greener.
+
+Three beliefs sit under everything in this dossier.
+
+\begin{enumerate}[leftmargin=1.6em,label={\color{audit}\display\arabic*}]
+\item \textbf{Green is not a business model. Value is.} If green hydrogen cannot beat grey on cost, or win a contract that pays for the difference, it is a press release, not a project. I judge every technology by the rupees of value it creates per rupee spent.
+\item \textbf{The first customer is the fertiliser plant, not the car.} The hydrogen train is a fine symbol. The real prize is swapping the six-odd million tonnes of dirty hydrogen India already uses, starting with ammonia.
+\item \textbf{Bet on technology the way an investor would.} Build the core on what is proven and bankable. Buy cheap options on what could change the game. Never confuse the two.
+\end{enumerate}
+
+This is the first of four things Shalvi and I are building. It feeds a project-management presentation for Prof.\ Gopal, where we act as risk managers wearing project managers' badges; a research paper; a set of Python models on GitHub; and, much later, a blueprint for building a company from a single plant. This dossier does one job: it gives us the knowledge to pick the right machine. After it, we choose one stack and build everything else on that choice.
+
+\vspace{4pt}
+\begin{tikzpicture}
+\node[anchor=west,font=\display\fontsize{15}{18}\selectfont,text=ink,text width=0.9\textwidth] at (0,0)
+{\itshape ``Hydrogen is not the answer to everything. It is the only answer to a few things. My job is to find which few, and to price them honestly.''};
+\draw[audit,line width=1.2pt] (-3mm,6mm) -- (-3mm,-6mm);
+\end{tikzpicture}
+
+\vspace{6pt}
+\begin{plainwords}[Three numbers to keep in your head]
+\textbf{US\$2.1–2.2 per kg} is what grey hydrogen costs in India today \cite{jmkiocl2025,tribune2025}. \textbf{About \usd{}3.8 per kg} is what my model says a well-run Indian alkaline plant makes green hydrogen for. \textbf{About \usd{}2.5–2.9 per kg} is what the winning green-ammonia bids in India's 2025 auctions quietly assume. The gap between the second and third numbers is the most important finding in this dossier, and Section~\ref{sec:cost} explains it.
+\end{plainwords}
+
+\newpage
+% ============================ WORKFLOW MAP ==================================
+\phase{Work flow}{The map of this dossier}{Where the knowledge comes from, how it is checked, and where it goes next.}
+
+\begin{center}
+\begin{tikzpicture}[
+  box/.style={rounded corners=2pt,draw=#1,line width=0.7pt,fill=paper,align=left,inner sep=5pt,text width=36mm,font=\small},
+  tag/.style={font=\eyebrowfont\fontsize{6.2}{7}\selectfont,text=#1},
+  arr/.style={-{Stealth[length=2.6mm]},line width=0.8pt,color=ink2},
+  node distance=6mm and 6mm]
+\node[box=brass] (gem) {\eyebrow{Input}\\ Gemini deep-research brief: technical, dense, unverified};
+\node[box=audit,right=of gem] (fc) {\eyebrow{Check}\\ My independent fact-check of every number I reuse (Annex A)};
+\node[box=ink,right=of fc] (mod) {\eyebrow{Model}\\ A Python cost model: 5 stacks, 100,000 simulated futures each};
+\node[box=ink,below=12mm of gem,text width=36mm] (p1) {\eyebrow{Phase 1}\\ \textbf{The molecule.} What hydrogen is, where it hides in daily life, and the train-and-car question};
+\node[box=ink,right=of p1] (p2) {\eyebrow{Phase 2}\\ \textbf{The problem and the promise.} How dirty today's hydrogen is; what green fixes; the goals it serves};
+\node[box=ink,right=of p2] (p3) {\eyebrow{Phase 3 \textbullet\ heaviest}\\ \textbf{The machine.} Five stacks scored on cost, supply, risk, value per rupee};
+\node[box=ink,below=12mm of p3] (fw) {\eyebrow{Frameworks}\\ STEEPLE, scenarios, Porter, SWOT, VRIO, bow-tie, each with 1–5 scores};
+\node[box=audit,left=of fw] (bet) {\eyebrow{The bet}\\ What each technology offers, the options on the table, and my lean};
+\node[box=brass,left=of bet] (next) {\eyebrow{Next: we choose}\\ One stack $\rightarrow$ PRM project, research paper, GitHub engine, venture blueprint};
+\draw[arr] (gem) -- (fc); \draw[arr] (fc) -- (mod);
+\draw[arr] (fc.south) -- ++(0,-5mm) -| (p1.north);
+\draw[arr] (p1) -- (p2); \draw[arr] (p2) -- (p3);
+\draw[arr] (mod.south) -- (p3.north);
+\draw[arr] (p3) -- (fw); \draw[arr] (fw) -- (bet); \draw[arr] (bet) -- (next);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{How I score things}
+Every framework in Phase 3 uses the same five-step scale, so that a ``4'' in Porter's model means the same strength as a ``4'' in the technology scorecard.
+
+\begin{center}\tablefont
+\begin{tabularx}{0.95\textwidth}{@{}l l L@{}}
+\toprule
+\thead{Score} & \thead{Word} & \thead{What it means for the decision}\\ \midrule
+\score{5}\ 5 & Very high & Dominant. It would change the decision on its own.\\
+\score{4}\ 4 & High & Strong. It shifts the decision unless something else outweighs it.\\
+\score{3}\ 3 & Standard & Present, but it does not separate one option from another.\\
+\score{2}\ 2 & Low & Weak. Worth noting, rarely decisive.\\
+\score{1}\ 1 & Very low & Negligible, or a clear weakness when the scale is ``higher is better''.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+In the technology scorecard every column is turned so that \textbf{5 is good for us}. A ``5'' under risk therefore means \emph{low} risk. In Porter's model and the bow-tie, the score measures the \emph{strength of the force or threat}, so a 5 there is bad news. I say which convention applies above each table.
+
+
+\newpage
